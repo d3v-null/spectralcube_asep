@@ -52,13 +52,13 @@ hyperdrive srclist-by-beam \
 # 2) Convert AO source list -> DP3 sourcedb/skymodel text (via lofartools)
 model_in=1271676902_reduced_n250.txt
 model_out=${model_in%.txt}.skymodel.txt
-singularity exec -B$PWD -W$PWD docker://satyapan/lofartools:0.1 \
+docker run --rm -v "$PWD:$PWD" -w "$PWD" satyapan/lofartools:0.1 \
   editmodel -skymodel ${model_out} ${model_in}
 
 # 3) Run DP3 gaincal (full-Jones) and write calibrated visibilities to a new MS
-# NOTE: the dp3-mwa container is referenced in DP3_notes.md
+# NOTE: the dp3-mwa image is referenced in DP3_notes.md
 export OPENBLAS_NUM_THREADS=1
-singularity exec -B$PWD -W$PWD docker://d3vnull0/dp3-mwa:latest DP3 \
+docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mwa:latest DP3 \
   msin=${ms} \
   msout=dp3_1271676902_di.ms \
   steps=[gaincal] \
