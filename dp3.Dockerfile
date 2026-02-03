@@ -119,12 +119,13 @@ RUN --mount=type=cache,target=/opt/buildcache \
 # ----------------
 # Spack install (layer 2): dependencies only
 # ----------------
-RUN --mount=type=cache,target=/opt/buildcache \
-    source /opt/spack/share/spack/setup-env.sh && \
-    # Re-write + validate the EveryBeam patch immediately before any potential
-    # from-source EveryBeam build. This avoids rare cases where the patch file
-    # ends up corrupted/truncated in intermediate layers.
-    cat > /opt/ska-sdp-spack/packages/everybeam/mwapoint-itrf-direction.patch <<'PATCH'
+RUN --mount=type=cache,target=/opt/buildcache <<'BASH'
+source /opt/spack/share/spack/setup-env.sh
+
+# Re-write + validate the EveryBeam patch immediately before any potential
+# from-source EveryBeam build. This avoids rare cases where the patch file
+# ends up corrupted/truncated in intermediate layers.
+cat > /opt/ska-sdp-spack/packages/everybeam/mwapoint-itrf-direction.patch <<'PATCH'
 diff --git a/cpp/pointresponse/mwapoint.cc b/cpp/pointresponse/mwapoint.cc
 --- a/cpp/pointresponse/mwapoint.cc
 +++ b/cpp/pointresponse/mwapoint.cc
@@ -149,16 +150,12 @@ diff --git a/cpp/pointresponse/mwapoint.cc b/cpp/pointresponse/mwapoint.cc
 -      measure_converter(itrf).getValue().getValue();
 +      measure_converter(direction_itrf).getValue().getValue();
 PATCH
-    python3 - <<'PY'
-from pathlib import Path
-p = Path('/opt/ska-sdp-spack/packages/everybeam/mwapoint-itrf-direction.patch')
-b = p.read_bytes()
-assert b'\0' not in b, 'patch contains NUL bytes'
-assert b.endswith(b'\n'), 'patch missing trailing newline'
-print('patch bytes:', len(b))
-PY
-    spack -e /opt/spack_env install --use-buildcache=auto --reuse \
-      --only=dependencies --no-check-signature --fail-fast --test=root
+
+python3 -c "from pathlib import Path; p=Path('/opt/ska-sdp-spack/packages/everybeam/mwapoint-itrf-direction.patch'); b=p.read_bytes(); assert b'\\0' not in b, 'patch contains NUL bytes'; assert b.endswith(b'\\n'), 'patch missing trailing newline'; print('patch bytes:', len(b))"
+
+spack -e /opt/spack_env install --use-buildcache=auto --reuse \
+  --only=dependencies --no-check-signature --fail-fast --test=root
+BASH
 
 # ----------------
 # Spack install (layer 3): roots (dp3 + everybeam + hdf5)
