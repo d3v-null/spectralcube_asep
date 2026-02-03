@@ -97,8 +97,15 @@ if [[ "$have_wsclean" == "1" ]]; then
     "$work_ms"
 else
   echo "wsclean not found; falling back to container: $WSCLEAN_CONTAINER" >&2
+  # WSClean writes a temp "*-parted-meta.tmp" next to the MS. Some MS directories are not writable
+  # inside the container (permissions/ownership). Work around by copying the MS to a writable temp.
+  tmpw=$(mktemp -d)
+  echo "Container mode: copying MS to temp writable dir: $tmpw" >&2
+  cp -a "$work_ms" "$tmpw/$(basename "$work_ms")"
+  work_ms2="$tmpw/$(basename "$work_ms")"
+
   docker run --rm \
-    -v "$PWD:$PWD" -w "$PWD" \
+    -v "$tmpw:$tmpw" -w "$tmpw" \
     "$WSCLEAN_CONTAINER" bash -lc "
       set -euo pipefail
       wsclean -name '$base' \
@@ -109,8 +116,12 @@ else
         -weight natural \
         -data-column '$DATA_COLUMN' \
         $WSCLEAN_ARGS \
-        '$work_ms'
+        '$work_ms2'
     "
+
+  # Bring results back
+  cp -a "$tmpw/${base}-"* .
+  rm -rf "$tmpw"
 fi
 
 # Determine which suffixes exist (XX-image / YY-image etc.)
