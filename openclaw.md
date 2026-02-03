@@ -69,7 +69,11 @@ docker run --rm --entrypoint /entrypoint.sh -v "$PWD:$PWD" -w "$PWD" mwatelescop
 docker run --rm -v "$PWD:$PWD" -w "$PWD" satyapan/lofartools:0.1 \
   editmodel -skymodel ${model_out} ${model_in}
 
-# first: without beam
+```
+
+first: without beam
+
+```bash
 docker run --rm --entrypoint /entrypoint.sh -v "$PWD:$PWD" -w "$PWD" mwatelescope/mwa-demo:main hyperdrive vis-simulate \
   --source-dist-cutoff=180 --veto-threshold 0.005 \
   --freq-res 1280 --num-fine-channels 24 \
@@ -87,6 +91,26 @@ docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mw
   predict.sourcedb=${model_out} \
   predict.usebeammodel=false \
   msout.overwrite=true
+```
+
+they're the same.
+
+```txt
+# docker run --rm -v $PWD:$PWD --entrypoint $PWD/taql_compare.sh d3vnull0/dp3-mwa:latest $PWD/*_model_${obsid}_src${num_sources}_no_beam.ms
+==== Comparing column DATA ====
+-- DATA stats
+using style glish select countall() as nrows, gsum(sum(abs(DATA))) as sum_abs, gmean(mean(abs(DATA))) as mean_abs from /home/ubuntu/spectralcube_asep/dp3_model_1099487728_src500_no_beam.ms
+    has been executed
+    select result of 1 rows
+3 selected columns:  nrows sum_abs mean_abs
+8128    8.81865e+07     113.018
+
+-- DATA stats
+using style glish select countall() as nrows, gsum(sum(abs(DATA))) as sum_abs, gmean(mean(abs(DATA))) as mean_abs from /home/ubuntu/spectralcube_asep/hyp_model_1099487728_src500_no_beam.ms
+    has been executed
+    select result of 1 rows
+3 selected columns:  nrows sum_abs mean_abs
+8128    8.81855e+07     113.017
 ```
 
 with beam
@@ -112,6 +136,25 @@ docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mw
   predict.usebeammodel=true \
   predict.coefficients_path=${MWA_BEAM_FILE} \
   msout.overwrite=true
+```
+
+these are different.
+
+```txt
+# docker run --rm -v $PWD:$PWD --entrypoint $PWD/taql_compare.sh d3vnull0/dp3-mwa:latest $PWD/*_model_1099487728_src500.ms
+-- DATA stats
+using style glish select countall() as nrows, gsum(sum(abs(DATA))) as sum_abs, gmean(mean(abs(DATA))) as mean_abs from /home/ubuntu/spectralcube_asep/dp3_model_1099487728_src500.ms
+    has been executed
+    select result of 1 rows
+3 selected columns:  nrows sum_abs mean_abs
+8128    3.04483e+06     3.90219
+
+-- DATA stats
+using style glish select countall() as nrows, gsum(sum(abs(DATA))) as sum_abs, gmean(mean(abs(DATA))) as mean_abs from /home/ubuntu/spectralcube_asep/hyp_model_1099487728_src500.ms
+    has been executed
+    select result of 1 rows
+3 selected columns:  nrows sum_abs mean_abs
+8128    1.632e+07       20.9153
 ```
 
 First step is to DI Calibrate the data.

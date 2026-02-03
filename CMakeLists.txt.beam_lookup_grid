@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.16)
+project(beam_lookup_grid CXX)
+set(CMAKE_CXX_STANDARD 20)
+
+# Expect EveryBeam + casacore to be in /opt/view (dp3-mwa image layout)
+set(CMAKE_PREFIX_PATH "/opt/view/lib/everybeam")
+
+set(AOCOMMON_INCLUDE_DIR "" CACHE PATH "Path to directory containing aocommon headers")
+
+find_package(EveryBeam CONFIG REQUIRED)
+
+add_executable(beam_lookup_grid beam_lookup_grid.cc)
+
+# Headers (EveryBeam package export is sometimes minimal)
+target_include_directories(beam_lookup_grid PRIVATE /opt/view/include)
+if(AOCOMMON_INCLUDE_DIR)
+  target_include_directories(beam_lookup_grid PRIVATE "${AOCOMMON_INCLUDE_DIR}")
+endif()
+
+# Libraries
+# EveryBeam exported target links dependencies.
+target_link_directories(beam_lookup_grid PRIVATE /opt/view/lib)
+target_link_libraries(beam_lookup_grid PRIVATE EveryBeam::everybeam)

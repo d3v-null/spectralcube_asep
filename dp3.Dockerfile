@@ -25,7 +25,7 @@ RUN source /opt/spack/share/spack/setup-env.sh && \
     spack repo add /opt/ska-sdp-spack
 
 # ----------------
-# Spack environment setup (layer 1): config + concretize
+# Spack environment setup: config + concretize
 # ----------------
 RUN --mount=type=cache,target=/opt/buildcache \
     source /opt/spack/share/spack/setup-env.sh && \
@@ -73,7 +73,7 @@ RUN --mount=type=cache,target=/opt/buildcache \
 
 # DO NOT EDIT ABOVE THIS LINE
 # ----------------
-# Spack install (layer 2): dependencies only
+# Spack install: dependencies only
 # ----------------
 RUN --mount=type=cache,target=/opt/buildcache \
     source /opt/spack/share/spack/setup-env.sh && \
@@ -103,7 +103,7 @@ print('everybeam: ensured version 0.8.0@2614beaf present')
 PY
 
 # ----------------
-# Spack install (layer 3): roots (dp3 + everybeam + hdf5)
+# Spack install: roots (dp3 + everybeam + hdf5)
 # ----------------
 RUN --mount=type=cache,target=/opt/buildcache \
     source /opt/spack/share/spack/setup-env.sh && \
@@ -152,4 +152,5 @@ RUN printf '%s\n' \
     > /usr/local/bin/entrypoint.sh && chmod +x /usr/local/bin/entrypoint.sh
 
 # Smoke test: fail the image build if DP3 cannot start due to missing shared libs.
-RUN /opt/view/bin/DP3 --version >/dev/null
+RUN ldd /opt/view/bin/DP3 | tee /tmp/ldd.txt && ! grep -q "not found" /tmp/ldd.txt
+RUN OPENBLAS_NUM_THREADS=1 /opt/view/bin/DP3 --version
