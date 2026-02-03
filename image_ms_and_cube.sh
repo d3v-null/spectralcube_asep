@@ -109,6 +109,7 @@ else
   chmod -R a+rX "$work_ms2"
 
   docker run --rm \
+    --user 0:0 \
     -e OPENBLAS_NUM_THREADS=1 \
     -v "$tmpw:$tmpw" -w "$tmpw" \
     "$WSCLEAN_CONTAINER" bash -lc "
