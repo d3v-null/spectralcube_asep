@@ -121,6 +121,42 @@ RUN --mount=type=cache,target=/opt/buildcache \
 # ----------------
 RUN --mount=type=cache,target=/opt/buildcache \
     source /opt/spack/share/spack/setup-env.sh && \
+    # Re-write + validate the EveryBeam patch immediately before any potential
+    # from-source EveryBeam build. This avoids rare cases where the patch file
+    # ends up corrupted/truncated in intermediate layers.
+    cat > /opt/ska-sdp-spack/packages/everybeam/mwapoint-itrf-direction.patch <<'PATCH'
+diff --git a/cpp/pointresponse/mwapoint.cc b/cpp/pointresponse/mwapoint.cc
+--- a/cpp/pointresponse/mwapoint.cc
++++ b/cpp/pointresponse/mwapoint.cc
+@@ -102,15 +102,18 @@ void MWAPoint::Response(aocommon::MC2x2* result, BeamMode beam_mode,
+   const telescope::MWA& mwatelescope =
+       static_cast<const telescope::MWA&>(GetTelescope());
+   casacore::MeasFrame frame(mwatelescope.GetArrayPosition(), time_epoch);
+-  const casacore::Vector<double> itrf_coord(
+-      {itrf_direction[0], itrf_direction[1], itrf_direction[2]});
+-  const casacore::Quantum<casacore::Vector<double>> itrf(itrf_coord, "m");
+-  const casacore::MDirection direction_itrf(itrf, casacore::MDirection::ITRF);
++
++  // itrf_direction is a unit direction cosine vector in ITRF, not meters.
++  const casacore::MDirection direction_itrf(
++      casacore::MVDirection(itrf_direction[0], itrf_direction[1],
++                            itrf_direction[2]),
++      casacore::MDirection::Ref(casacore::MDirection::ITRF, frame));
+   casacore::MDirection::Convert measure_converter(
+       casacore::MDirection::Ref(casacore::MDirection::ITRF, frame),
+       casacore::MDirection::J2000);
+   const casacore::Vector<double> j2000_dir =
+-      measure_converter(itrf).getValue().getValue();
++      measure_converter(direction_itrf).getValue().getValue();
+PATCH
+    python3 - <<'PY'
+from pathlib import Path
+p = Path('/opt/ska-sdp-spack/packages/everybeam/mwapoint-itrf-direction.patch')
+b = p.read_bytes()
+assert b'\0' not in b, 'patch contains NUL bytes'
+assert b.endswith(b'\n'), 'patch missing trailing newline'
+print('patch bytes:', len(b))
+PY
     spack -e /opt/spack_env install --use-buildcache=auto --reuse \
       --only=dependencies --no-check-signature --fail-fast --test=root
 
