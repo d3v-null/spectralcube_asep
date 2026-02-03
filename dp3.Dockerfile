@@ -124,6 +124,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     git \
     python3 \
+    libpython3.10 \
+    libcurl4 \
     python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
