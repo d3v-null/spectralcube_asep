@@ -111,12 +111,20 @@ RUN --mount=type=cache,target=/opt/buildcache \
       --no-check-signature --fail-fast --test=root && \
     test -x /opt/view/bin/DP3
 
+RUN source /opt/spack/share/spack/setup-env.sh && \
+    spack gc -y
+
+# ----------------
+# Runtime stage: copy over the installed software and the Spack environment from the builder stage
+# ----------------
 FROM ubuntu:jammy AS runtime
 
 # Spack is a Python application; install a minimal Python runtime.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3 \
     ca-certificates \
+    git \
+    python3 \
+    python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /opt/software /opt/software
@@ -140,3 +148,6 @@ RUN printf '%s\n' \
     'spack env activate /opt/spack_env' \
     'exec "$@"' \
     > /usr/local/bin/entrypoint.sh && chmod +x /usr/local/bin/entrypoint.sh
+
+# Smoke test: fail the image build if DP3 cannot start due to missing shared libs.
+RUN /opt/view/bin/DP3 --version >/dev/null
