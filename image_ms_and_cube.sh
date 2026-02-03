@@ -105,6 +105,7 @@ else
   work_ms2="$tmpw/$(basename "$work_ms")"
 
   docker run --rm \
+    -e OPENBLAS_NUM_THREADS=1 \
     -v "$tmpw:$tmpw" -w "$tmpw" \
     "$WSCLEAN_CONTAINER" bash -lc "
       set -euo pipefail
