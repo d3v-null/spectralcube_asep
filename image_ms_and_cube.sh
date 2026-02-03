@@ -38,12 +38,17 @@ if [[ ! -e "$ms" ]]; then
   exit 2
 fi
 
-if ! command -v wsclean >/dev/null; then
-  echo "ERROR: wsclean not in PATH" >&2
-  exit 2
+WSCLEAN_CONTAINER=${WSCLEAN_CONTAINER:-images.canfar.net/srcnet/sp5505:sha-ceb56ad-cpu}
+
+have_wsclean=0
+if command -v wsclean >/dev/null; then
+  have_wsclean=1
 fi
+
+# We'll run wsclean either natively or inside the container.
+# create_cube_with_beam.py is run natively (python3 required).
 if ! command -v python3 >/dev/null; then
-  echo "ERROR: python3 not in PATH" >&2
+  echo "ERROR: python3 not in PATH (needed for create_cube_with_beam.py and scale computation)" >&2
   exit 2
 fi
 
@@ -80,15 +85,33 @@ echo "Imaging $work_ms"
 echo "  base=$base"
 echo "  imsize=$IM_SIZE scale=$scale deg/pix nch=$NCH pol=$POL datacol=$DATA_COLUMN"
 
-wsclean -name "$base" \
-  -size "$IM_SIZE" "$IM_SIZE" -scale "$scale" \
-  -channels-out "$NCH" -join-channels \
-  -pol "$POL" \
-  -niter 0 \
-  -weight natural \
-  -data-column "$DATA_COLUMN" \
-  $WSCLEAN_ARGS \
-  "$work_ms"
+if [[ "$have_wsclean" == "1" ]]; then
+  wsclean -name "$base" \
+    -size "$IM_SIZE" "$IM_SIZE" -scale "$scale" \
+    -channels-out "$NCH" -join-channels \
+    -pol "$POL" \
+    -niter 0 \
+    -weight natural \
+    -data-column "$DATA_COLUMN" \
+    $WSCLEAN_ARGS \
+    "$work_ms"
+else
+  echo "wsclean not found; falling back to container: $WSCLEAN_CONTAINER" >&2
+  docker run --rm \
+    -v "$PWD:$PWD" -w "$PWD" \
+    "$WSCLEAN_CONTAINER" bash -lc "
+      set -euo pipefail
+      wsclean -name '$base' \
+        -size '$IM_SIZE' '$IM_SIZE' -scale '$scale' \
+        -channels-out '$NCH' -join-channels \
+        -pol '$POL' \
+        -niter 0 \
+        -weight natural \
+        -data-column '$DATA_COLUMN' \
+        $WSCLEAN_ARGS \
+        '$work_ms'
+    "
+fi
 
 # Determine which suffixes exist (XX-image / YY-image etc.)
 # create_cube_with_beam.py expects suff like "XX-image".
