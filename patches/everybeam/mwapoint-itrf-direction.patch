@@ -1,7 +1,6 @@
-diff --git a/cpp/pointresponse/mwapoint.cc b/cpp/pointresponse/mwapoint.cc
 --- a/cpp/pointresponse/mwapoint.cc
 +++ b/cpp/pointresponse/mwapoint.cc
-@@ -102,15 +102,18 @@ void MWAPoint::Response(aocommon::MC2x2* result, BeamMode beam_mode,
+@@ -102,15 +102,17 @@
    const telescope::MWA& mwatelescope =
        static_cast<const telescope::MWA&>(GetTelescope());
    casacore::MeasFrame frame(mwatelescope.GetArrayPosition(), time_epoch);
@@ -21,3 +20,6 @@ diff --git a/cpp/pointresponse/mwapoint.cc b/cpp/pointresponse/mwapoint.cc
    const casacore::Vector<double> j2000_dir =
 -      measure_converter(itrf).getValue().getValue();
 +      measure_converter(direction_itrf).getValue().getValue();
+ 
+   ResponseDouble(beam_mode, result, j2000_dir[0], j2000_dir[1], freqs,
+                  station_idx, 0);
