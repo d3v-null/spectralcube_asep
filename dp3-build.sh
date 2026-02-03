@@ -56,7 +56,7 @@ echo "=== $(date -u '+%F %T UTC') dp3-build done rc=$rc ==="
 # Optional: notify Discord via OpenClaw CLI (if installed).
 if command -v openclaw >/dev/null 2>&1; then
   openclaw message send --channel discord --target 1467366630265979117 \
-    --message "dp3-build done rc=$rc. Tail:\n$(tail -n 15 \"$log\")" || true
+    --message "dp3-build done rc=$rc. Tail:\n$(tail -n 15 "$log")" || true
 fi
 
 exit "$rc"

@@ -1,5 +1,5 @@
 # Based on https://github.com/d3v-null/hpc-docker-images/blob/main/dp3-mwa.Dockerfile
-# Builder uses Spack to install DP3 + EveryBeam, with an MWA beam fix patch.
+# Builder uses Spack to install DP3 + EveryBeam.
 
 FROM spack/ubuntu-jammy:1.0.1 AS builder
 SHELL ["/bin/bash", "-lc"]
@@ -23,28 +23,6 @@ RUN source /opt/spack/share/spack/setup-env.sh && \
     git clone https://gitlab.com/ska-telescope/sdp/ska-sdp-spack.git /opt/ska-sdp-spack && \
     sed -i 's/namespace: ska-sdp-spack/namespace: ska_sdp_spack/' /opt/ska-sdp-spack/repo.yaml || true && \
     spack repo add /opt/ska-sdp-spack
-
-# Add an EveryBeam patch to fix MWA ITRF direction handling.
-# DP3 passes ITRF *direction cosines*, but EveryBeam was treating them as meters.
-# Use a COPY from build context to avoid heredoc/pipeline corruption.
-COPY patches/everybeam/mwapoint-itrf-direction.patch \
-  /opt/ska-sdp-spack/packages/everybeam/mwapoint-itrf-direction.patch
-
-# Sanity checks: patch file must be non-empty, end with newline, and contain no NUL bytes.
-RUN source /opt/spack/share/spack/setup-env.sh && \
-    test -s /opt/ska-sdp-spack/packages/everybeam/mwapoint-itrf-direction.patch && \
-    python3 - <<'PY'
-from pathlib import Path
-p = Path('/opt/ska-sdp-spack/packages/everybeam/mwapoint-itrf-direction.patch')
-b = p.read_bytes()
-assert b'\0' not in b, 'patch contains NUL bytes'
-assert b.endswith(b'\n'), 'patch missing trailing newline'
-print('patch bytes:', len(b))
-PY
-
-# Inject the patch into the EveryBeam Spack package at v0.7.4.
-RUN source /opt/spack/share/spack/setup-env.sh && \
-    python3 -c "import pathlib; p=pathlib.Path('/opt/ska-sdp-spack/packages/everybeam/package.py'); txt=p.read_text(); imp='from spack.package import depends_on, join_path, variant, version, which\\n'; imp2='from spack.package import depends_on, join_path, variant, version, which, patch\\n'; txt = (txt.replace(imp, imp2) if (imp in txt and 'which, patch' not in txt) else txt); ver='    version(\\\"0.7.4\\\", tag=\\\"v0.7.4\\\", submodules=True)\\n'; patchline='    patch(\\\"mwapoint-itrf-direction.patch\\\", when=\\\"@0.7.4\\\")\\n'; txt = (txt.replace(ver, ver+patchline) if (ver in txt and patchline not in txt) else txt); assert ver in txt, 'everybeam package.py missing 0.7.4 version line'; p.write_text(txt)"
 
 # ----------------
 # Spack environment setup (layer 1): config + concretize
@@ -87,25 +65,42 @@ RUN --mount=type=cache,target=/opt/buildcache \
     # Add + concretize.
     spack -e /opt/spack_env add \
       'hdf5+threadsafe' \
-      'everybeam@=0.7.4~python' \
+      'everybeam@0.8.0: ~python' \
       'dp3@master~python' && \
     spack -e /opt/spack_env concretize --force && \
     # Cap build parallelism for reliability.
     spack -e /opt/spack_env config add "config:build_jobs:4"
 
+# DO NOT EDIT ABOVE THIS LINE
 # ----------------
 # Spack install (layer 2): dependencies only
 # ----------------
-RUN --mount=type=cache,target=/opt/buildcache <<'BASH'
-source /opt/spack/share/spack/setup-env.sh
+RUN --mount=type=cache,target=/opt/buildcache \
+    source /opt/spack/share/spack/setup-env.sh && \
+    spack -e /opt/spack_env install --use-buildcache=auto --reuse \
+    --only=dependencies --no-check-signature --fail-fast --test=root
 
-# Validate the EveryBeam patch immediately before any potential from-source
-# EveryBeam build.
-python3 -c "from pathlib import Path; p=Path('/opt/ska-sdp-spack/packages/everybeam/mwapoint-itrf-direction.patch'); b=p.read_bytes(); assert b'\\0' not in b, 'patch contains NUL bytes'; assert b.endswith(b'\\n'), 'patch missing trailing newline'; print('patch bytes:', len(b))"
-
-spack -e /opt/spack_env install --use-buildcache=auto --reuse \
-  --only=dependencies --no-check-signature --fail-fast --test=root
-BASH
+# EveryBeam: use upstream fix from master (commit 2614beaf). No patching needed.
+# Add a Spack version entry that pins that commit as 0.8.0.
+RUN source /opt/spack/share/spack/setup-env.sh && \
+    python3 - <<'PY'
+import pathlib
+p = pathlib.Path('/opt/ska-sdp-spack/packages/everybeam/package.py')
+txt = p.read_text()
+ver_line = '    version("0.8.0", commit="2614beaf", submodules=True)\n'
+if 'version("0.8.0",' not in txt and ver_line not in txt:
+    # Insert near the top of the version list. If a master/develop version exists,
+    # insert after it; otherwise insert after the class docstring/variants area.
+    lines = txt.splitlines(True)
+    # Find first existing version() line.
+    idx = next((i for i,l in enumerate(lines) if l.lstrip().startswith('version(')), None)
+    if idx is None:
+        raise SystemExit('everybeam package.py: no version() lines found')
+    lines.insert(idx, ver_line)
+    txt = ''.join(lines)
+    p.write_text(txt)
+print('everybeam: ensured version 0.8.0@2614beaf present')
+PY
 
 # ----------------
 # Spack install (layer 3): roots (dp3 + everybeam + hdf5)
