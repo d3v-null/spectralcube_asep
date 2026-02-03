@@ -103,7 +103,21 @@ if [[ "$APPLY_PRIMARY_BEAM" == "1" ]]; then
 fi
 
 if [[ "$have_wsclean" == "1" ]]; then
-  wsclean -name "$base" \
+  WSCLEAN_TEMP_DIR=${WSCLEAN_TEMP_DIR:-}
+WSCLEAN_THREADS=${WSCLEAN_THREADS:-}
+
+TD_ARGS=""
+if [[ -n "${WSCLEAN_TEMP_DIR}" ]]; then
+  TD_ARGS="-temp-dir ${WSCLEAN_TEMP_DIR}"
+fi
+J_ARGS=""
+if [[ -n "${WSCLEAN_THREADS}" ]]; then
+  J_ARGS="-j ${WSCLEAN_THREADS}"
+fi
+
+wsclean -name "$base" \
+    $J_ARGS \
+    $TD_ARGS \
     -size "$IM_SIZE" "$IM_SIZE" -scale "$scale" \
     -channels-out "$NCH" -join-channels \
     -pol "$POL" \
@@ -133,7 +147,10 @@ else
     -v "$tmpw:$tmpw" -w "$tmpw" \
     "$WSCLEAN_CONTAINER" bash -lc "
       set -euo pipefail
+      # Force temp dir inside writable mount to avoid parted-meta.tmp permission issues
       wsclean -name '$base' \
+        -j ${WSCLEAN_THREADS:-4} \
+        -temp-dir '$tmpw' \
         -size '$IM_SIZE' '$IM_SIZE' -scale '$scale' \
         -channels-out '$NCH' -join-channels \
         -pol '$POL' \
