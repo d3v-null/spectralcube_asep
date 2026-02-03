@@ -33,6 +33,11 @@ WSCLEAN_ARGS=${WSCLEAN_ARGS:-}
 CHGCENTRE_MINW=${CHGCENTRE_MINW:-0}
 GPSTIME=${GPSTIME:-1099487728}
 
+# EveryBeam diagnostics (WSClean integration)
+APPLY_PRIMARY_BEAM=${APPLY_PRIMARY_BEAM:-0}   # set to 1 to enable -apply-primary-beam
+MWA_PATH=${MWA_PATH:-}                        # path containing mwa_full_embedded_element_pattern.h5 (passed via -mwa-path)
+PB_GRID_SIZE=${PB_GRID_SIZE:-32}              # passed via -pb-grid-size when APPLY_PRIMARY_BEAM=1
+
 if [[ ! -e "$ms" ]]; then
   echo "ERROR: MS not found: $ms" >&2
   exit 2
@@ -84,6 +89,18 @@ fi
 echo "Imaging $work_ms"
 echo "  base=$base"
 echo "  imsize=$IM_SIZE scale=$scale deg/pix nch=$NCH pol=$POL datacol=$DATA_COLUMN"
+if [[ "$APPLY_PRIMARY_BEAM" == "1" ]]; then
+  echo "  EveryBeam: -apply-primary-beam enabled (PB_GRID_SIZE=$PB_GRID_SIZE, MWA_PATH=${MWA_PATH:-<unset>})"
+fi
+
+# Assemble EveryBeam args (if enabled)
+PB_ARGS=""
+if [[ "$APPLY_PRIMARY_BEAM" == "1" ]]; then
+  PB_ARGS="-apply-primary-beam -pb-grid-size $PB_GRID_SIZE"
+  if [[ -n "${MWA_PATH}" ]]; then
+    PB_ARGS="$PB_ARGS -mwa-path $MWA_PATH"
+  fi
+fi
 
 if [[ "$have_wsclean" == "1" ]]; then
   wsclean -name "$base" \
@@ -93,6 +110,7 @@ if [[ "$have_wsclean" == "1" ]]; then
     -niter 0 \
     -weight natural \
     -data-column "$DATA_COLUMN" \
+    $PB_ARGS \
     $WSCLEAN_ARGS \
     "$work_ms"
 else
@@ -111,6 +129,7 @@ else
   docker run --rm \
     --user 0:0 \
     -e OPENBLAS_NUM_THREADS=1 \
+    -e PB_ARGS="$PB_ARGS" \
     -v "$tmpw:$tmpw" -w "$tmpw" \
     "$WSCLEAN_CONTAINER" bash -lc "
       set -euo pipefail
@@ -121,6 +140,7 @@ else
         -niter 0 \
         -weight natural \
         -data-column '$DATA_COLUMN' \
+        $PB_ARGS \
         $WSCLEAN_ARGS \
         '$work_ms2'
     "
