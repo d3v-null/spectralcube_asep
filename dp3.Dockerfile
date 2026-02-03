@@ -113,6 +113,12 @@ RUN --mount=type=cache,target=/opt/buildcache \
 
 FROM ubuntu:jammy AS runtime
 
+# Spack is a Python application; install a minimal Python runtime.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY --from=builder /opt/software /opt/software
 COPY --from=builder /opt/view /opt/view
 COPY --from=builder /opt/spack_env /opt/spack_env
