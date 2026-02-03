@@ -104,6 +104,10 @@ else
   cp -a "$work_ms" "$tmpw/$(basename "$work_ms")"
   work_ms2="$tmpw/$(basename "$work_ms")"
 
+  # Ensure container user can traverse the temp directory
+  chmod 755 "$tmpw"
+  chmod -R a+rX "$work_ms2"
+
   docker run --rm \
     -e OPENBLAS_NUM_THREADS=1 \
     -v "$tmpw:$tmpw" -w "$tmpw" \
