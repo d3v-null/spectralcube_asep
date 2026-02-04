@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import numpy as np
 import astropy.wcs as wcs
 from astropy.io import fits
@@ -112,6 +113,7 @@ def main(args):
     # Create Primary HDU
     print("Creating HDUs...")
     hdu_out = fits.PrimaryHDU(data=im_cube, header=input_wcs.to_header())
+    hdu_out.header['BUNIT'] = 'Jy/beam'
 
     # Create CASAMBM Table
     beams_arr = np.array(beams, dtype=np.float32)
