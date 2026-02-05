@@ -138,26 +138,228 @@ docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mw
   msout.overwrite=true
 ```
 
-these are different.
+these are now the same.
 
 ```txt
-# docker run --rm -v $PWD:$PWD --entrypoint $PWD/taql_compare.sh d3vnull0/dp3-mwa:latest $PWD/*_model_1099487728_src500.ms
--- DATA stats
-using style glish select countall() as nrows, gsum(sum(abs(DATA))) as sum_abs, gmean(mean(abs(DATA))) as mean_abs from /home/ubuntu/spectralcube_asep/dp3_model_1099487728_src500.ms
-    has been executed
-    select result of 1 rows
-3 selected columns:  nrows sum_abs mean_abs
-8128    3.04483e+06     3.90219
-
+# docker run --rm -v $PWD:$PWD --entrypoint $PWD/taql_compare.sh d3vnull0/dp3-mwa:latest $PWD/{hyp,dp3}_model_1099487728_src500.ms
 -- DATA stats
 using style glish select countall() as nrows, gsum(sum(abs(DATA))) as sum_abs, gmean(mean(abs(DATA))) as mean_abs from /home/ubuntu/spectralcube_asep/hyp_model_1099487728_src500.ms
     has been executed
     select result of 1 rows
 3 selected columns:  nrows sum_abs mean_abs
 8128    1.632e+07       20.9153
+
+-- DATA stats
+using style glish select countall() as nrows, gsum(sum(abs(DATA))) as sum_abs, gmean(mean(abs(DATA))) as mean_abs from /home/ubuntu/spectralcube_asep/dp3_model_1099487728_src500.ms
+    has been executed
+    select result of 1 rows
+3 selected columns:  nrows sum_abs mean_abs
+8128    1.65897e+07     21.2609
 ```
 
+also confirm with images
+
+```bash
+cd /home/ubuntu/spectralcube_asep
+for ms in {hyp,dp3}_model_${obsid}_src${num_sources}.ms; do
+  docker run --rm --user 0:0 -e OPENBLAS_NUM_THREADS=1 \
+  -v "$PWD:$PWD" -w "$PWD" \
+  images.canfar.net/srcnet/sp5505:sha-ceb56ad-cpu \
+  wsclean -name ebdiag/${ms%.ms} \
+  -j 16 \
+  -temp-dir /tmp \
+  -size 1024 1024 -scale 0.117188 \
+  -pol xx,yy -niter 0 -weight natural \
+  -data-column DATA \
+  -apply-primary-beam -pb-grid-size 1024 \
+  -mwa-path "$PWD" \
+  $ms
+done
+```
+
+
 First step is to DI Calibrate the data.
+
+---
+
+# DP3: Direction-dependent subtraction options (DDECal vs Demix)
+
+This section extends the comparison plan with DP3's two main approaches for removing a small number of extremely bright sources:
+
+- **DDECal** (general direction-dependent calibration; can solve multiple directions jointly; supports frequency-dependent behaviour via `nchan` and/or `smoothnessconstraint`).
+- **Demix** (specialised "A-team" style demixing; solves a bright direction and subtracts it; typically assumes gains are constant over the solved bandwidth, so it is best done in relatively narrow frequency chunks).
+
+The goal here is a *repeatable* DP3-side comparison that is consistent with the dataset and file conventions at the top of this document.
+
+## When to use which
+
+### DDECal (recommended default for "top N" bright directions)
+Use DDECal when:
+- you have **several** bright sources contaminating the field (e.g. 5 directions),
+- you want to solve **all directions together** (joint fit),
+- you need behaviour that is **stable across bandwidth** (via `nchan` blocks and/or `smoothnessconstraint`).
+
+### Demix (useful for a single monster source)
+Use demix when:
+- you have **one** exceptionally bright off-axis source dominating a sidelobe (Sun / Cas A / etc.),
+- you want a quick "remove that one thing" step,
+- you are willing to assume gains are (approximately) **constant in frequency** over the demix band.
+
+A pragmatic hybrid is: **demix the single most extreme source first**, then run **DDECal** on the remaining directions.
+
+## Common DP3 settings that matter (MWA)
+
+These are the knobs that most strongly affect correctness/stability/runtime:
+
+- **Beam model**: for MWA use `*.usebeammodel=true` and set `*.coefficients_path=${MWA_BEAM_FILE}`.
+- **Baseline cut**: short baselines include diffuse emission not in a point-source model; keep `uvlambdamin` (or equivalent selection) consistent with your DI cal (here: `30λ`).
+- **Solution interval**:
+  - time: `solint` is in number of input timesteps.
+  - freq: `nchan` is number of input channels per solution.
+- **Smoothness constraint**: `smoothnessconstraint` regularises frequency variation (Gaussian smoothing kernel width in Hz).
+
+For this dataset (4s × 40 kHz), a reasonable starting point for bright-source peeling is:
+- `solint ~ 15` (≈60s)
+- `nchan ~ 8` (≈320 kHz)
+- `smoothnessconstraint ~ 1e6–2e6` (≈1–2 MHz)
+- solve **diagonal** gains unless you have a strong reason to fit full Jones.
+
+## Step 0: Build a "bright 5" sky model for DP3
+
+You need a DP3 skymodel that contains only the few bright sources you want to peel, **clustered into patches/directions**.
+
+A repeatable way to do this is:
+1) Reduce to AO format (hyperdrive) for the full catalogue.
+2) Select the brightest few sources (or brightest few *patches*) and assign them patch names.
+3) Convert AO -> DP3 skymodel text.
+
+**NOTE:** The exact selection/patching is project-specific. The rest of this section assumes you have:
+
+```bash
+bright5_ao=bright5.ao.txt
+bright5_dp3=bright5.skymodel.txt
+```
+
+and that the patches are named consistently, e.g. `patch1..patch5` (or source-based names).
+
+---
+
+## A) DDECal comparison run
+
+### 1) Run DDECal and subtract
+
+Example parset-style invocation (command-line keys):
+
+```bash
+export OPENBLAS_NUM_THREADS=1
+
+# Solve DDE gains in 5 directions and subtract their model
+# (adjust directions list to match your skymodel patch names)
+
+docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mwa:latest DP3 \
+  msin=${ms} \
+  msout=dp3_${obsid}_ddecal_sub.ms \
+  steps=[ddecal] \
+  ddecal.sourcedb=${bright5_dp3} \
+  ddecal.directions=[patch1,patch2,patch3,patch4,patch5] \
+  ddecal.mode=diagonal \
+  ddecal.solint=15 \
+  ddecal.nchan=8 \
+  ddecal.usebeammodel=true \
+  ddecal.coefficients_path=${MWA_BEAM_FILE} \
+  ddecal.uvlambdamin=30 \
+  ddecal.smoothnessconstraint=2e6 \
+  ddecal.beamproximitylimit=60 \
+  ddecal.h5parm=ddecal_solutions_${obsid}.h5 \
+  ddecal.subtract=true \
+  msout.overwrite=true
+```
+
+Notes:
+- `ddecal.mode=diagonal` is usually enough for Stokes I peeling; use `fulljones` only if you have evidence you need it.
+- `beamproximitylimit` clusters sources close together so the beam is computed once per cluster.
+
+### 2) QA
+
+- Plot the solutions:
+  ```bash
+  docker run --rm -v "$PWD:$PWD" -w "$PWD" revoltek/pill:20251114 losoto -V ddecal_solutions_${obsid}.h5 losoto-fullj.parset
+  ```
+- Image before/after to assess residuals around the peeled sources (WSClean dirty imaging is fine; ensure consistent parameters).
+- Compare vis stats before/after subtract (e.g. TAQL mean(|DATA|), flagged fraction).
+
+---
+
+## B) Demix comparison run
+
+Demix is most appropriate for removing *one* extremely bright off-axis source. For 5 sources, you can demix sequentially, but that is usually less attractive than a single DDECal solve unless one source is a clear outlier.
+
+### 1) Demix a single bright source
+
+DP3 demix configuration is SourceDB/patch-driven. Conceptually:
+- `subtractsources` = the source/patch to remove
+- optionally: `modelsources` = other sources to include in the solve model (but not subtract)
+- optionally: `targetsource` = a direction you want to preserve (solve but do not subtract)
+
+Example (pseudo-parset; names depend on your skymodel):
+
+```bash
+export OPENBLAS_NUM_THREADS=1
+
+# Demix one bright source (example: patch1)
+
+docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mwa:latest DP3 \
+  msin=${ms} \
+  msout=dp3_${obsid}_demix_patch1.ms \
+  steps=[demix] \
+  demix.sourcedb=${bright5_dp3} \
+  demix.subtractsources=[patch1] \
+  demix.usebeammodel=true \
+  demix.coefficients_path=${MWA_BEAM_FILE} \
+  demix.solint=15 \
+  demix.nchan=8 \
+  demix.uvlambdamin=30 \
+  demix.h5parm=demix_patch1_${obsid}.h5 \
+  msout.overwrite=true
+```
+
+**Important:** Demix often assumes gains are constant over the solved bandwidth. If you demix across a very wide band, you can leave spectral residuals. If needed, run demix per sub-band/chunk.
+
+### 2) Sequential demix for multiple sources (optional)
+
+If you insist on demixing multiple sources, do it iteratively:
+- output of previous demix becomes `msin` of the next.
+- keep the same baseline cuts and beam settings.
+
+---
+
+## DDECal vs Demix: what to compare fairly
+
+To compare DDECal vs Demix in a way that is meaningful:
+
+1) **Same input MS** (same flags, same averaging)
+2) **Same sky model content** (same 5 sources/patches; same flux scale)
+3) **Same baseline cuts** (`uvlambdamin`, etc.)
+4) **Same beam model** (`usebeammodel`, `coefficients_path`)
+5) **Comparable solution intervals** (`solint`, `nchan`)
+
+Metrics to record:
+- Runtime + peak memory
+- Residual image dynamic range around the peeled sources
+- Change in visibility statistics (mean(|DATA|), etc.)
+- Stability/structure of solutions (do they look smooth in time/frequency?)
+
+---
+
+## Practical recommendation for this project
+
+For "remove 5 brightest sources" on this MWA dataset, start with **DDECal** in diagonal mode with moderate `solint` and either small `nchan` blocks or a `smoothnessconstraint`.
+
+Consider Demix only if:
+- one source is overwhelmingly dominant and far off-axis, and
+- you want to remove it first to avoid contaminating a joint DDECal solve.
+
+(See `dp3_demix.md` for the parameter rationale and pitfalls.)
 
 ## DI Cal - DP3
 
@@ -165,6 +367,16 @@ First step is to DI Calibrate the data.
 # DP3 DI cal (gaincal) using a DP3/LoFAR-format sky model.
 # This follows the working pattern in DP3_notes.md, adapted to this dataset.
 
+# MWA MS fix
+docker run --rm -v "$PWD:$PWD" -w $PWD mwatelescope/cotter fixmwams ${ms} ${metafits}
+# docker run --rm --entrypoint /entrypoint.sh -v "$PWD:$PWD" -w "$PWD" mwatelescope/mwa-demo:main hyperdrive vis-convert \
+#   --data ${metafits} ${ms} \
+#   --outputs hyp_${ms}.ms
+# docker run --rm -v "$PWD:$PWD" -w $PWD mwatelescope/cotter fixmwams hyp_${ms}.ms ${metafits}
+
+
+[ -f gc_solutions_${obsid}.h5 ] && rm -rf gc_solutions_${obsid}.h5
+[ -d dp3_${obsid}_di.ms ] && rm -rf dp3_${obsid}_di.ms
 # 3) Run DP3 gaincal (full-Jones) and write calibrated visibilities to a new MS
 # NOTE: solint and nchan are the number of time and frequency channels to average over
 # 27 * 4s = 108s = 1.8 minutes
@@ -245,4 +457,53 @@ docker run --rm --entrypoint /entrypoint.sh -v "$PWD:$PWD" -w "$PWD" mwatelescop
   --solutions hyp_soln_${obsid}_75-1667l_1280kHz_src${num_sources}_300it.fits \
   --data ${metafits} ${ms} \
   --outputs hyp_${obsid}_di.ms
+```
+
+Imaging
+
+```bash
+docker run --rm -v $PWD:$PWD --entrypoint $PWD/image_ms_and_cube.sh d3vnull0/dp3-mwa:latest $PWD/birli_1099487728_4s_40kHz.ms
+```
+
+```bash
+# cd /home/ubuntu/spectralcube_asep
+# docker run --rm --user 0:0 -e OPENBLAS_NUM_THREADS=1 \
+# -v "$PWD:$PWD" -w "$PWD" \
+# images.canfar.net/srcnet/sp5505:sha-ceb56ad-cpu \
+# wsclean -name ebdiag_birli \
+# -j 4 \
+# -temp-dir /tmp \
+# -size 1024 1024 -scale 0.117188 \
+# -channels-out 24 -join-channels \
+# -pol xx,yy -niter 0 -weight natural \
+# -data-column DATA \
+# -apply-primary-beam -pb-grid-size 32 \
+# -mwa-path "$PWD" \
+# birli_1099487728_4s_40kHz.ms
+
+
+cd /home/ubuntu/spectralcube_asep
+docker run --rm --user 0:0 -e OPENBLAS_NUM_THREADS=1 \
+-v "$PWD:$PWD" -w "$PWD" \
+images.canfar.net/srcnet/sp5505:sha-ceb56ad-cpu \
+wsclean -name ebdiag_birli \
+-j 16 \
+-temp-dir /tmp \
+-size 1024 1024 -scale 0.117188 \
+-pol xx,yy -niter 0 -weight natural \
+-data-column DATA \
+-apply-primary-beam -pb-grid-size 1024 \
+-mwa-path "$PWD" \
+hyp_${ms}.ms
+```
+
+carta
+
+```bash
+docker run --rm -it \
+  -v "$PWD:/images" \
+  -w "/images" \
+  -p 3005:3005 \
+  cartavis/carta:latest \
+  --port 3005
 ```
