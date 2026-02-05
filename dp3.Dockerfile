@@ -154,3 +154,152 @@ RUN printf '%s\n' \
 # Smoke test: fail the image build if DP3 cannot start due to missing shared libs.
 RUN ldd /opt/view/bin/DP3 | tee /tmp/ldd.txt && ! grep -q "not found" /tmp/ldd.txt
 RUN OPENBLAS_NUM_THREADS=1 /opt/view/bin/DP3 --version
+
+# Smoke test data layer: download reference MS + stage MWA beam coefficients in /opt.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl \
+    unzip \
+    g++ \
+    cmake \
+    make \
+    tar \
+    && rm -rf /var/lib/apt/lists/*
+
+SHELL ["/bin/bash", "-lc"]
+RUN set -euo pipefail; \
+    cd /opt; \
+    curl -L --fail --retry 3 -o hyp_model_1099487728_src500.ms.zip \
+      "https://projects.pawsey.org.au/mwa-demo/hyp_model_1099487728_src500.ms.zip"; \
+    unzip -q hyp_model_1099487728_src500.ms.zip; \
+    rm -f hyp_model_1099487728_src500.ms.zip; \
+    test -d /opt/hyp_model_1099487728_src500.ms
+
+# Keep the beam coefficients as a stable reference file.
+COPY mwa_full_embedded_element_pattern.h5 /opt/mwa_full_embedded_element_pattern.h5
+
+# Smoke test: force EveryBeam to evaluate an MWA (FEE) beam using the reference MS.
+# Uses the pattern from:
+#   https://raw.githubusercontent.com/cjordan/mwa_hyperbeam/.../everybeam_example.cpp
+SHELL ["/bin/bash", "-lc"]
+RUN <<'BASH'
+set -euo pipefail
+
+# Tooling already installed in an earlier layer.
+
+tmpdir="$(mktemp -d)"
+cd "$tmpdir"
+
+test -d /opt/hyp_model_1099487728_src500.ms
+test -s /opt/mwa_full_embedded_element_pattern.h5
+
+cat > eb_mwa_eval.cc <<'CPP'
+#include <EveryBeam/beammode.h>
+#include <EveryBeam/beamnormalisationmode.h>
+#include <EveryBeam/pointresponse/pointresponse.h>
+#include <EveryBeam/telescope/mwa.h>
+#include <aocommon/coordinatesystem.h>
+#include <casacore/ms/MeasurementSets/MeasurementSet.h>
+#include <casacore/tables/Tables/ScalarColumn.h>
+
+#include <cmath>
+#include <complex>
+#include <cstdlib>
+#include <iomanip>
+#include <iostream>
+#include <memory>
+
+int main() {
+  const char* ms_path = "/opt/hyp_model_1099487728_src500.ms";
+  const char* beam_path = "/opt/mwa_full_embedded_element_pattern.h5";
+
+  casacore::MeasurementSet ms(ms_path);
+  casacore::ScalarColumn<double> time_col(ms, "TIME");
+  const double time0 = time_col(0);
+
+  constexpr double DEC_RAD = -27.0 * M_PI / 180.0;
+  constexpr double FREQ_HZ = 150e6;
+
+  // Scan ~20 points in RA around 0 deg, 1 deg apart ([-9, +10] deg)
+  constexpr int RA_START_DEG = -9;
+  constexpr int RA_END_DEG = 10;
+
+  everybeam::Options options;
+  options.coeff_path = beam_path;
+  options.beam_normalisation_mode = everybeam::BeamNormalisationMode::kFull;
+  options.beam_mode = everybeam::BeamMode::kFull;
+  options.frequency_interpolation = false;
+
+  everybeam::telescope::MWA beam(ms, options);
+  std::unique_ptr<everybeam::pointresponse::PointResponse> pr = beam.GetPointResponse(time0);
+
+  bool any_ok = false;
+  for(int ra_deg = RA_START_DEG; ra_deg <= RA_END_DEG; ++ra_deg) {
+    const double ra_rad = double(ra_deg) * M_PI / 180.0;
+
+    std::complex<float> jones[4];
+    pr->Response(everybeam::BeamMode::kFull, jones, ra_rad, DEC_RAD, FREQ_HZ, 0, 0);
+
+    const double amp = std::abs(jones[0]) + std::abs(jones[1]) + std::abs(jones[2]) + std::abs(jones[3]);
+
+    std::cout << std::setprecision(8)
+              << "RA_deg=" << ra_deg
+              << " DEC_deg=" << (-27.0)
+              << " J00=" << jones[0] << " J01=" << jones[1]
+              << " J10=" << jones[2] << " J11=" << jones[3]
+              << " |sumabs|=" << amp << "\n";
+
+    any_ok = any_ok || (amp > 1.0e-6);
+  }
+
+  if (!any_ok) {
+    std::cerr << "EveryBeam MWA response is near-zero for all scan points (unexpected)\n";
+    return 1;
+  }
+  return 0;
+}
+CPP
+
+cat > CMakeLists.txt <<'CMAKE'
+cmake_minimum_required(VERSION 3.16)
+project(eb_mwa_eval CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_PREFIX_PATH "/opt/view/lib/everybeam")
+
+set(AOCOMMON_INCLUDE_DIR "" CACHE PATH "Path to directory containing aocommon headers")
+
+find_package(EveryBeam CONFIG REQUIRED)
+add_executable(eb_mwa_eval eb_mwa_eval.cc)
+
+target_include_directories(eb_mwa_eval PRIVATE /opt/view/include ${EVERYBEAM_INCLUDE_DIRS})
+if(AOCOMMON_INCLUDE_DIR)
+  target_include_directories(eb_mwa_eval PRIVATE "${AOCOMMON_INCLUDE_DIR}")
+endif()
+
+target_link_directories(eb_mwa_eval PRIVATE /opt/view/lib)
+# Some exported EveryBeam targets refer to -lhdf5_cpp-shared; ensure the linker can resolve it.
+target_link_libraries(eb_mwa_eval PRIVATE EveryBeam::everybeam)
+CMAKE
+
+# Fetch aocommon headers from GitLab at a known commit.
+AOCOMMON_SHA=7120f1999ec20057a2d3035f12619fc099735ed4
+curl -L --fail --retry 3 -o aocommon.tgz \
+  "https://gitlab.com/aroffringa/aocommon/-/archive/${AOCOMMON_SHA}/aocommon-${AOCOMMON_SHA}.tar.gz"
+tar -xzf aocommon.tgz
+AOCOMMON_SRC_DIR="$(find . -maxdepth 1 -type d -name 'aocommon-*' | head -n 1)"
+test -n "$AOCOMMON_SRC_DIR"
+test -d "$AOCOMMON_SRC_DIR/include/aocommon"
+AOCOMMON_INCLUDE_DIR="$tmpdir/aocommon/include"
+mkdir -p "$AOCOMMON_INCLUDE_DIR"
+cp -a "$AOCOMMON_SRC_DIR/include/aocommon" "$AOCOMMON_INCLUDE_DIR/"
+
+# Work around exported target referring to -lhdf5_cpp-shared
+ln -sf /opt/view/lib/libhdf5_cpp.so /opt/view/lib/libhdf5_cpp-shared.so
+
+cmake -S . -B build -DAOCOMMON_INCLUDE_DIR="$AOCOMMON_INCLUDE_DIR"
+cmake --build build -j
+./build/eb_mwa_eval > /opt/eb_mwa_eval.txt
+
+cd /
+rm -rf "$tmpdir"
+BASH
