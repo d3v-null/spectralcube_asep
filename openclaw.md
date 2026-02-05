@@ -233,14 +233,26 @@ A repeatable way to do this is:
 2) Select the brightest few sources (or brightest few *patches*) and assign them patch names.
 3) Convert AO -> DP3 skymodel text.
 
-**NOTE:** The exact selection/patching is project-specific. The rest of this section assumes you have:
+### Fully automated patch/direction generation (recommended)
+
+To make the comparison reproducible, generate DP3 directions (patches) automatically using lofartools.
+This clusters the input AO sky model into `cluster1..clusterK`, then converts to a DP3 skymodel.
+
+From this repo (already includes the helper script):
 
 ```bash
+# Build 5 clusters from the existing 500-source AO model
+# Input:  1099487728_reduced_n500.txt
+# Output: bright5.ao.txt + bright5.skymodel.txt
+
+./build_bright_clusters.sh 1099487728_reduced_n500.txt 5 bright5.ao.txt bright5.skymodel.txt
+
+# Directions will be: cluster1,cluster2,cluster3,cluster4,cluster5
 bright5_ao=bright5.ao.txt
 bright5_dp3=bright5.skymodel.txt
 ```
 
-and that the patches are named consistently, e.g. `patch1..patch5` (or source-based names).
+This removes the need to hand-name patches like `POINTING`.
 
 ---
 
@@ -261,7 +273,7 @@ docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mw
   msout=dp3_${obsid}_ddecal_sub.ms \
   steps=[ddecal] \
   ddecal.sourcedb=${bright5_dp3} \
-  ddecal.directions=[patch1,patch2,patch3,patch4,patch5] \
+  ddecal.directions=[cluster1,cluster2,cluster3,cluster4,cluster5] \
   ddecal.mode=diagonal \
   ddecal.solint=15 \
   ddecal.nchan=8 \
@@ -313,7 +325,7 @@ docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mw
   msout=dp3_${obsid}_demix_patch1.ms \
   steps=[demix] \
   demix.sourcedb=${bright5_dp3} \
-  demix.subtractsources=[patch1] \
+  demix.subtractsources=[cluster1] \
   demix.usebeammodel=true \
   demix.coefficients_path=${MWA_BEAM_FILE} \
   demix.solint=15 \

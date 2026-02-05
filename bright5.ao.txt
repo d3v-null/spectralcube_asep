@@ -1,0 +1,6548 @@
+skymodel fileformat 1.1
+source {
+  name "GLEAM J004441-353029"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h44m41.384s -35d30m29.279s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 7.3662166595459 0 0 0
+      spectral-index { -0.537548840045929, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003600-302312"
+  cluster "cluster1"
+  component {
+    type gaussian
+    shape 184.791702270508 138.338195800781 -61.3510704040527
+    position 00h36m00.645s -30d23m12.943s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.84812617301941 0 0 0
+      spectral-index { -1.24955189228058, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002718-334647"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h27m18.696s -33d46m47.996s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.67223823070526 0 0 0
+      spectral-index { -0.836064755916595, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010316-322550"
+  cluster "cluster1"
+  component {
+    type point
+    position 01h03m16.846s -32d25m50.322s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.24487733840942 0 0 0
+      spectral-index { -0.33874186873436, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010925-344712"
+  cluster "cluster1"
+  component {
+    type point
+    position 01h09m25.739s -34d47m12.152s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.96611046791077 0 0 0
+      spectral-index { -0.650445342063904, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004011-314407"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h40m11.719s -31d44m07.3s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.08274233341217 0 0 0
+      spectral-index { -0.552071392536163, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005807-374939"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h58m07.483s -37d49m39.643s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.82883954048157 0 0 0
+      spectral-index { -0.976177632808685, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003238-325311"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h32m38.467s -32d53m11.295s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.977127254009247 0 0 0
+      spectral-index { -0.516506493091583, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004230-343729"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h42m30.499s -34d37m29.492s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.15516710281372 0 0 0
+      spectral-index { -0.900169909000397, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J011304-340307"
+  cluster "cluster1"
+  component {
+    type point
+    position 01h13m04.75s -34d03m07.825s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.52575969696045 0 0 0
+      spectral-index { -0.801472127437592, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J011412-321730"
+  cluster "cluster1"
+  component {
+    type point
+    position 01h14m12.355s -32d17m30.76s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.15047430992126 0 0 0
+      spectral-index { -0.865258932113647, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004235-300010"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h42m35.723s -30d00m10.492s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.667217433452606 0 0 0
+      spectral-index { -0.857808768749237, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002530-330336"
+  cluster "cluster1"
+  component {
+    type gaussian
+    shape 169.007064819336 137.238800048828 30.00124168396
+    position 00h25m30.596s -33d03m36.183s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 6.87203502655029 0 0 0
+      spectral-index { -0.862545788288116, 0 }
+    }
+  }
+}
+source {
+  name "FornaxA-comp1"
+  cluster "cluster1"
+  component {
+    type gaussian
+    shape 1092.59997558594 936.599975585938 2.70000004768372
+    position 03h21m31.992s -37d08m49.926s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 402.429992675781 0 0 0
+      spectral-index { -0.800000011920929, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003629-372745"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h36m29.308s -37d27m45.074s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.33075833320618 0 0 0
+      spectral-index { -0.91014838218689, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003130-325944"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h31m30.536s -32d59m44.18s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.91824352741241 0 0 0
+      spectral-index { -0.643269717693329, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010509-381101"
+  cluster "cluster1"
+  component {
+    type point
+    position 01h05m09.255s -38d11m01.418s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 5.3197808265686 0 0 0
+      spectral-index { -0.825474619865417, 0 }
+    }
+  }
+}
+source {
+  name "FornaxA-comp2"
+  cluster "cluster1"
+  component {
+    type gaussian
+    shape 1012.59997558594 972.900024414063 -77.6999969482422
+    position 03h23m57.0s -37d16m39.001s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 237.479995727539 0 0 0
+      spectral-index { -0.800000011920929, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J013411-362913"
+  cluster "cluster1"
+  component {
+    type gaussian
+    shape 228.105209350586 204.885726928711 24.2137851715088
+    position 01h34m11.673s -36d29m13.761s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 15.1769189834595 0 0 0
+      spectral-index { -0.72441428899765, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003152-311437"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h31m52.787s -31d14m37.869s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.14222395420074 0 0 0
+      spectral-index { -0.334387749433517, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002359-325757"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h23m59.143s -32d57m57.448s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.08551919460297 0 0 0
+      spectral-index { -0.817995846271515, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004839-294718"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h48m39.08s -29d47m18.215s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.44333124160767 0 0 0
+      spectral-index { -0.148738071322441, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003103-354715"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h31m03.534s -35d47m15.695s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.50543224811554 0 0 0
+      spectral-index { -0.79219001531601, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003728-334439"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h37m28.736s -33d44m39.648s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.20455849170685 0 0 0
+      spectral-index { -0.792523622512817, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003928-332235"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h39m28.239s -33d22m35.136s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.15601003170013 0 0 0
+      spectral-index { -0.955226480960846, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J012202-373112"
+  cluster "cluster1"
+  component {
+    type gaussian
+    shape 176.605041503906 133.001739501953 18.1647167205811
+    position 01h22m02.693s -37d31m12.496s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 6.6391019821167 0 0 0
+      spectral-index { -0.941189885139465, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010439-331451"
+  cluster "cluster1"
+  component {
+    type point
+    position 01h04m39.44s -33d14m51.664s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.0415632724762 0 0 0
+      spectral-index { -0.880779981613159, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004420-315659"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h44m20.183s -31d56m59.131s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.05381071567535 0 0 0
+      spectral-index { -0.936438977718353, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J013332-362850"
+  cluster "cluster1"
+  component {
+    type gaussian
+    shape 298.485992431641 211.324111938477 -71.4230194091797
+    position 01h33m32.338s -36d28m50.003s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 11.1926689147949 0 0 0
+      spectral-index { -0.700440764427185, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005037-295749"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h50m37.079s -29d57m49.771s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.08974409103394 0 0 0
+      spectral-index { -0.789685010910034, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003259-334512"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h32m59.37s -33d45m12.95s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.0397686958313 0 0 0
+      spectral-index { -0.555805087089539, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002808-323846"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h28m08.916s -32d38m46.918s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.872647702693939 0 0 0
+      spectral-index { -0.612590134143829, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003758-340627"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h37m58.413s -34d06m27.611s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.03253054618835 0 0 0
+      spectral-index { -1.06656777858734, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003605-332824"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h36m05.033s -33d28m24.446s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.935355544090271 0 0 0
+      spectral-index { -0.929608047008514, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005659-380954"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h56m59.458s -38d09m54.223s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.65577816963196 0 0 0
+      spectral-index { -0.657290816307068, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J011437-330205"
+  cluster "cluster1"
+  component {
+    type point
+    position 01h14m37.065s -33d02m05.381s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.56359028816223 0 0 0
+      spectral-index { -0.86875581741333, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005202-355608"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h52m02.643s -35d56m08.82s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.53787231445312 0 0 0
+      spectral-index { -0.901643097400665, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005537-305649"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h55m37.496s -30d56m49.174s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.10732352733612 0 0 0
+      spectral-index { -0.779733538627625, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002506-342644"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h25m06.419s -34d26m44.471s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.809375405311584 0 0 0
+      spectral-index { -0.900743782520294, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004017-325437"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h40m17.259s -32d54m37.414s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.829611599445343 0 0 0
+      spectral-index { -0.883509159088135, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003021-331433"
+  cluster "cluster1"
+  component {
+    type gaussian
+    shape 206.134170532227 145.495147705078 34.3130531311035
+    position 00h30m21.954s -33d14m33.235s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.756666541099548 0 0 0
+      spectral-index { -0.60322642326355, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010405-340350"
+  cluster "cluster1"
+  component {
+    type point
+    position 01h04m05.571s -34d03m50.466s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.57604837417603 0 0 0
+      spectral-index { -1.0386164188385, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J012123-300754"
+  cluster "cluster1"
+  component {
+    type point
+    position 01h21m23.362s -30d07m54.85s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.80961203575134 0 0 0
+      spectral-index { -0.761226952075958, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005509-361735"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h55m09.708s -36d17m35.168s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.47407352924347 0 0 0
+      spectral-index { -0.970206379890442, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003847-303441"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h38m47.924s -30d34m41.985s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.649100363254547 0 0 0
+      spectral-index { -0.751214981079102, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004616-420739"
+  cluster "cluster1"
+  component {
+    type gaussian
+    shape 173.885848999023 136.529235839844 -70.4164047241211
+    position 00h46m16.09s -42d07m39.311s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 24.9941997528076 0 0 0
+      spectral-index { -0.72147524356842, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003826-385949"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h38m26.827s -38d59m49.384s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 8.77406215667725 0 0 0
+      spectral-index { -0.903118491172791, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002654-365535"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h26m54.736s -36d55m35.806s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.3813042640686 0 0 0
+      spectral-index { -0.767395734786987, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004209-441404"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h42m09.22s -44d14m04.629s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 15.0644330978394 0 0 0
+      spectral-index { -0.688620269298553, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005214-430628"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h52m14.684s -43d06m28.916s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 11.6111278533936 0 0 0
+      spectral-index { -0.769092202186584, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003257-371954"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h32m57.056s -37d19m54.859s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.90046203136444 0 0 0
+      spectral-index { -0.800266861915588, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002620-353519"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h26m20.619s -35d35m19.139s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.07784676551819 0 0 0
+      spectral-index { -0.847883224487305, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003445-372351"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h34m45.781s -37d23m51.161s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.16103529930115 0 0 0
+      spectral-index { -1.03668260574341, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002727-391528"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h27m27.133s -39d15m28.441s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.06853890419006 0 0 0
+      spectral-index { -1.37994515895844, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002851-415736"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h28m51.193s -41d57m36.848s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.77881765365601 0 0 0
+      spectral-index { -0.942645788192749, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010837-285124"
+  cluster "cluster1"
+  component {
+    type point
+    position 01h08m37.967s -28d51m24.879s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.7353458404541 0 0 0
+      spectral-index { -0.0311858933418989, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J011539-281707"
+  cluster "cluster1"
+  component {
+    type point
+    position 01h15m39.547s -28d17m07.84s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.54377484321594 0 0 0
+      spectral-index { -0.663814961910248, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004444-295333"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h44m44.889s -29d53m33.343s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.777748584747314 0 0 0
+      spectral-index { -0.871381759643555, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005908-285952"
+  cluster "cluster1"
+  component {
+    type point
+    position 00h59m08.168s -28d59m52.55s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.53259456157684 0 0 0
+      spectral-index { -0.76394921541214, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235701-344532"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h57m01.201s -34d45m32.3s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 16.3266334533691 0 0 0
+      spectral-index { -1.12013328075409, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000312-355630"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 165.384399414063 143.316619873047 -68.2543182373047
+    position 00h03m12.911s -35d56m30.23s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 5.21335411071777 0 0 0
+      spectral-index { -1.12558043003082, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233343-305753"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h33m43.418s -30d57m53.108s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.11431360244751 0 0 0
+      spectral-index { -0.224971875548363, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000042-342358"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h00m42.14s -34d23m58.33s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.35437083244324 0 0 0
+      spectral-index { -0.952540338039398, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235641-314919"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h56m41.191s -31d49m19.579s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.99046468734741 0 0 0
+      spectral-index { -0.611463844776154, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233429-334502"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h34m29.59s -33d45m02.499s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.03480362892151 0 0 0
+      spectral-index { -0.982325315475464, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232327-305754"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h23m27.51s -30d57m54.934s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.3339569568634 0 0 0
+      spectral-index { -0.805594325065613, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235945-330350"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h59m45.732s -33d03m50.933s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.17879605293274 0 0 0
+      spectral-index { -1.10056495666504, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233752-345446"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h37m52.009s -34d54m46.464s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.94643330574036 0 0 0
+      spectral-index { -0.693535804748535, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233535-343328"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h35m35.728s -34d33m28.466s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.84227895736694 0 0 0
+      spectral-index { -0.898660123348236, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233913-330105"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h39m13.308s -33d01m05.726s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.55454969406128 0 0 0
+      spectral-index { -0.496171653270721, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000217-333118"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h02m17.329s -33d31m18.168s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.927546262741089 0 0 0
+      spectral-index { -0.871615767478943, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234805-312424"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h48m05.405s -31d24m24.423s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.88671487569809 0 0 0
+      spectral-index { -0.916386187076569, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000341-310355"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h03m41.13s -31d03m55.032s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.723456859588623 0 0 0
+      spectral-index { -0.73347681760788, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234509-373008"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h45m09.573s -37d30m08.871s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.51786124706268 0 0 0
+      spectral-index { -0.835945069789886, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234531-362652"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h45m31.392s -36d26m52.82s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.27608585357666 0 0 0
+      spectral-index { -0.889326155185699, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J230455-343129"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h04m55.664s -34d31m29.044s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.64937162399292 0 0 0
+      spectral-index { -0.553197681903839, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000427-310749"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h04m27.798s -31d07m48.999s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.616005957126617 0 0 0
+      spectral-index { -0.619505286216736, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233718-323148"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h37m18.64s -32d31m48.765s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.835785448551178 0 0 0
+      spectral-index { -0.934017539024353, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001218-332157"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h12m18.127s -33d21m57.261s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.95878458023071 0 0 0
+      spectral-index { -0.823659479618073, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234146-350620"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h41m46.106s -35d06m20.498s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 8.19087696075439 0 0 0
+      spectral-index { -0.539777934551239, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001524-380439"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h15m24.0s -38d04m39.863s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 7.48654413223267 0 0 0
+      spectral-index { -1.0119823217392, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000355-305949"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h03m55.139s -30d59m49.851s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.63673424720764 0 0 0
+      spectral-index { -0.799600183963776, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233426-412520"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h34m26.125s -41d25m20.851s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 22.2153282165527 0 0 0
+      spectral-index { -0.703248798847198, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233648-344403"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h36m48.56s -34d44m03.956s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 5.89681148529053 0 0 0
+      spectral-index { -1.15675187110901, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000245-302825"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h02m45.867s -30d28m25.339s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.28715014457703 0 0 0
+      spectral-index { -0.870789229869843, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000143-305731"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h01m43.556s -30d57m31.025s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.31302666664124 0 0 0
+      spectral-index { -0.840491890907288, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000924-314614"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h09m24.661s -31d46m14.062s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.25368642807007 0 0 0
+      spectral-index { -1.06468343734741, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235553-300046"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h55m53.335s -30d00m46.479s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.21407461166382 0 0 0
+      spectral-index { -0.950448393821716, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232634-402715"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h26m34.175s -40d27m15.851s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 11.3486385345459 0 0 0
+      spectral-index { -0.617888331413269, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234455-304058"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h44m55.532s -30d40m58.452s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.17094707489014 0 0 0
+      spectral-index { -0.770589351654053, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233954-331011"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h39m54.814s -33d10m11.362s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.75954627990723 0 0 0
+      spectral-index { -0.729210734367371, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001636-382643"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 185.265151977539 153.398666381836 26.9131927490234
+    position 00h16m36.398s -38d26m43.88s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.80822992324829 0 0 0
+      spectral-index { -0.849296748638153, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234850-314412"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h48m50.691s -31d44m12.759s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.83740532398224 0 0 0
+      spectral-index { -0.827557265758514, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001038-322510"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h10m38.525s -32d25m10.744s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.53937363624573 0 0 0
+      spectral-index { -0.970979571342468, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233703-324041"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h37m03.267s -32d40m41.684s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.34961867332458 0 0 0
+      spectral-index { -0.733683109283447, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232036-335325"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 178.470169067383 131.112701416016 87.2502517700195
+    position 23h20m36.782s -33d53m25.92s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.00432825088501 0 0 0
+      spectral-index { -0.884312093257904, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000601-423445"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h06m01.76s -42d34m45.219s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 7.05160856246948 0 0 0
+      spectral-index { -0.756801545619965, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233247-313728"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h32m47.183s -31d37m28.586s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.91297936439514 0 0 0
+      spectral-index { -0.867915213108063, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235258-295523"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h52m58.799s -29d55m23.982s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.16868901252747 0 0 0
+      spectral-index { -0.734666347503662, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000412-343110"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h04m12.033s -34d31m10.972s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.3522253036499 0 0 0
+      spectral-index { -1.07265543937683, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J230223-371805"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h02m23.965s -37d18m05.051s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 9.5726490020752 0 0 0
+      spectral-index { -0.438634157180786, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001030-442259"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h10m30.508s -44d22m59.622s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 10.8098154067993 0 0 0
+      spectral-index { -0.949730634689331, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234337-300837"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h43m37.427s -30d08m37.847s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.15429854393005 0 0 0
+      spectral-index { -1.11504256725311, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235910-605553"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 218.83544921875 166.16813659668 -21.4040946960449
+    position 23h59m10.217s -60d55m53.357s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 55.8764038085938 0 0 0
+      spectral-index { -0.677277863025665, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235103-383927"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h51m03.787s -38d39m27.279s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.51106715202332 0 0 0
+      spectral-index { -0.848260939121246, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233732-372843"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h37m32.497s -37d28m43.178s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.47225666046143 0 0 0
+      spectral-index { -1.07017338275909, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234355-313913"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h43m55.767s -31d39m13.223s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.19437372684479 0 0 0
+      spectral-index { -0.943615674972534, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J231310-315749"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h13m10.986s -31d57m49.29s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.95279407501221 0 0 0
+      spectral-index { -0.786662518978119, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234854-311707"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h48m54.309s -31d17m07.943s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.04434549808502 0 0 0
+      spectral-index { -0.747192323207855, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000936-321640"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h09m36.272s -32d16m40.676s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.961496770381927 0 0 0
+      spectral-index { -0.54943585395813, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235137-300751"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h51m37.383s -30d07m51.629s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.8727707862854 0 0 0
+      spectral-index { -0.795183658599854, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000552-352156"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h05m52.822s -35d21m56.492s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.14427030086517 0 0 0
+      spectral-index { -0.91772985458374, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J225303-405744"
+  cluster "cluster2"
+  component {
+    type point
+    position 22h53m03.45s -40d57m44.195s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 20.9236736297607 0 0 0
+      spectral-index { -0.776771426200867, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234649-301642"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h46m49.944s -30d16m42.324s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.884624183177948 0 0 0
+      spectral-index { -0.920698702335358, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235847-605322"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 191.521423339844 144.601837158203 -13.7927179336548
+    position 23h58m47.439s -60d53m22.391s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 46.0769691467285 0 0 0
+      spectral-index { -0.614652812480927, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235626-325016"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h56m26.462s -32d50m16.873s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.883478820323944 0 0 0
+      spectral-index { -0.922905683517456, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001026-343137"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h10m26.145s -34d31m37.105s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.913061738014221 0 0 0
+      spectral-index { -0.90506911277771, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000152-312521"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 147.225631713867 143.076919555664 45.2990112304688
+    position 00h01m52.083s -31d25m21.881s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.709754824638367 0 0 0
+      spectral-index { -1.03943812847137, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001738-351309"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h17m38.737s -35d13m09.491s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.998478055000305 0 0 0
+      spectral-index { -0.85132759809494, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234440-333339"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h44m40.393s -33d33m39.342s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.02241516113281 0 0 0
+      spectral-index { -0.961588621139526, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000410-330134"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 177.774826049805 122.541923522949 -54.0603561401367
+    position 00h04m10.965s -33d01m34.977s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.751129031181335 0 0 0
+      spectral-index { -1.17334043979645, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235525-335759"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h55m25.964s -33d57m59.659s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.878012835979462 0 0 0
+      spectral-index { -0.980056285858154, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234427-392438"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h44m27.202s -39d24m38.828s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.16605734825134 0 0 0
+      spectral-index { -0.979061603546143, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001235-344531"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h12m35.007s -34d45m31.97s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.862208724021912 0 0 0
+      spectral-index { -0.864102005958557, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234911-325417"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h49m11.492s -32d54m17.501s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.855649769306183 0 0 0
+      spectral-index { -0.784829378128052, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235630-322219"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h56m30.564s -32d22m19.906s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.762370467185974 0 0 0
+      spectral-index { -0.691768944263458, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234844-384353"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h48m44.465s -38d43m53.711s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.81466388702393 0 0 0
+      spectral-index { -0.72723525762558, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J231953-365630"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h19m53.547s -36d56m30.065s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.71485352516174 0 0 0
+      spectral-index { -0.522831082344055, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233531-330553"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h35m31.56s -33d05m53.169s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.05993223190308 0 0 0
+      spectral-index { -0.713407814502716, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233034-304753"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h30m34.211s -30d47m53.165s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.01986479759216 0 0 0
+      spectral-index { -0.819507598876953, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000029-345220"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h00m29.541s -34d52m20.95s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.826525032520294 0 0 0
+      spectral-index { -0.908727705478668, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235316-371326"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 159.596649169922 138.628829956055 82.0606842041016
+    position 23h53m16.113s -37d13m26.163s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.22499656677246 0 0 0
+      spectral-index { -0.777967393398285, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234341-310202"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h43m41.484s -31d02m02.896s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.796511769294739 0 0 0
+      spectral-index { -0.382239371538162, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233605-323011"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 167.5234375 150.576080322266 -7.99109745025635
+    position 23h36m05.493s -32d30m11.783s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.966953217983246 0 0 0
+      spectral-index { -0.677454173564911, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001437-332815"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h14m37.249s -33d28m15.218s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.6738201379776 0 0 0
+      spectral-index { -0.866775929927826, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J215706-694117"
+  cluster "cluster2"
+  component {
+    type point
+    position 21h57m06.936s -69d41m17.417s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 84.0747222900391 0 0 0
+      spectral-index { -0.49901819229126, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234507-303108"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h45m07.412s -30d31m08.575s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.682708919048309 0 0 0
+      spectral-index { -0.913584887981415, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233818-331719"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h38m18.882s -33d17m19.595s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.930617570877075 0 0 0
+      spectral-index { -0.906699657440186, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235913-361617"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h59m13.813s -36d16m17.715s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.968942105770111 0 0 0
+      spectral-index { -0.818694531917572, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233729-355528"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h37m29.539s -35d55m28.322s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.17328321933746 0 0 0
+      spectral-index { -1.23346674442291, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233023-355941"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h30m23.203s -35d59m41.721s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.4825918674469 0 0 0
+      spectral-index { -0.878047823905945, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233029-354610"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h30m29.883s -35d46m10.587s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.39837610721588 0 0 0
+      spectral-index { -0.867724001407623, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001525-332052"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h15m25.843s -33d20m52.304s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.633446335792542 0 0 0
+      spectral-index { -0.839220821857452, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235832-323814"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h58m32.6s -32d38m14.797s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.62925511598587 0 0 0
+      spectral-index { -0.847451627254486, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234951-295951"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h49m51.189s -29d59m51.424s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.597119271755219 0 0 0
+      spectral-index { -0.805282056331635, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000302-311814"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h03m02.595s -31d18m14.561s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.542584419250488 0 0 0
+      spectral-index { -0.955040276050568, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234439-315923"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h44m39.661s -31d59m23.113s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.682984113693237 0 0 0
+      spectral-index { -1.06248664855957, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000206-302007"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h02m06.593s -30d20m07.418s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.534101665019989 0 0 0
+      spectral-index { -0.73193746805191, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001737-364712"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h17m37.71s -36d47m12.372s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.951182007789612 0 0 0
+      spectral-index { -0.646424949169159, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001113-315029"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h11m13.544s -31d50m29.535s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.93892848491669 0 0 0
+      spectral-index { -0.76856940984726, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234945-292024"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h49m45.63s -29d20m24.186s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.32681882381439 0 0 0
+      spectral-index { -0.876625716686249, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001153-321459"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h11m53.541s -32d14m59.547s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.25154721736908 0 0 0
+      spectral-index { -0.675288379192352, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001339-322449"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h13m39.508s -32d24m49.183s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.980857193470001 0 0 0
+      spectral-index { -1.00441026687622, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001506-330153"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h15m06.307s -33d01m53.722s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.884486496448517 0 0 0
+      spectral-index { -0.825208842754364, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000420-284018"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h04m20.776s -28d40m18.791s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.711997270584106 0 0 0
+      spectral-index { -0.814101338386536, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000923-312239"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h09m23.424s -31d22m39.489s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.779497742652893 0 0 0
+      spectral-index { -0.840422809123993, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234318-294324"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h43m18.113s -29d43m24.769s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.852633655071259 0 0 0
+      spectral-index { -0.937041163444519, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J231416-303714"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h14m16.252s -30d37m14.914s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.94565939903259 0 0 0
+      spectral-index { -0.889958262443542, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234919-295119"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h49m19.775s -29d51m19.639s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.653065800666809 0 0 0
+      spectral-index { -0.758669078350067, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235648-290805"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h56m48.34s -29d08m05.863s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.591414332389832 0 0 0
+      spectral-index { -0.657860577106476, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234245-291041"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h42m45.198s -29d10m41.478s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.660511612892151 0 0 0
+      spectral-index { -0.982695937156677, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000107-294031"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h01m07.859s -29d40m31.446s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.532632112503052 0 0 0
+      spectral-index { -0.848342895507812, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235051-284940"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h50m51.372s -28d49m40.934s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.58705085515976 0 0 0
+      spectral-index { -0.625577747821808, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001035-305415"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h10m35.278s -30d54m15.276s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.533277332782745 0 0 0
+      spectral-index { -0.775242865085602, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000957-282930"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h09m57.81s -28d29m30.818s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.05813121795654 0 0 0
+      spectral-index { -0.921697854995728, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234049-284835"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 159.783279418945 139.641220092773 84.9978561401367
+    position 23h40m49.519s -28d48m35.14s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.2960889339447 0 0 0
+      spectral-index { -0.725244164466858, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000558-275858"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h05m58.526s -27d58m58.827s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.20109403133392 0 0 0
+      spectral-index { -0.795473456382751, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234058-283529"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 186.18913269043 144.525375366211 0.520374119281769
+    position 23h40m58.696s -28d35m29.542s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.33633708953857 0 0 0
+      spectral-index { -0.977122724056244, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000922-282153"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h09m22.902s -28d21m53.855s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.973498165607452 0 0 0
+      spectral-index { -0.81010103225708, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001341-300925"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h13m41.257s -30d09m25.816s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.857837378978729 0 0 0
+      spectral-index { -0.807562410831451, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000805-280743"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 156.179580688477 133.539031982422 12.8994903564453
+    position 00h08m05.286s -28d07m43.877s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.601312100887299 0 0 0
+      spectral-index { -0.753914058208466, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234410-285129"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h44m10.657s -28d51m29.754s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.773956775665283 0 0 0
+      spectral-index { -0.712149739265442, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001342-302153"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h13m42.239s -30d21m53.642s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.573356091976166 0 0 0
+      spectral-index { -0.973163604736328, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001612-312330"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 170.940200805664 135.446624755859 30.4308910369873
+    position 00h16m12.651s -31d23m30.274s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.41875576972961 0 0 0
+      spectral-index { -0.999151170253754, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001718-305435"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h17m18.208s -30d54m35.917s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.65342009067535 0 0 0
+      spectral-index { -0.959981262683868, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001742-305005"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h17m42.57s -30d50m05.338s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.39116048812866 0 0 0
+      spectral-index { -0.921440422534943, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001727-315943"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h17m27.062s -31d59m43.431s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.4425060749054 0 0 0
+      spectral-index { -0.861457049846649, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001531-303606"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h15m31.156s -30d36m06.888s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.888090550899506 0 0 0
+      spectral-index { -0.691051423549652, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001651-312237"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 201.090957641602 146.244293212891 -58.5321197509766
+    position 00h16m51.491s -31d22m37.203s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.640404582023621 0 0 0
+      spectral-index { -1.13453590869904, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234740-280839"
+  cluster "cluster2"
+  component {
+    type gaussian
+    shape 166.375473022461 141.687103271484 -3.36435842514038
+    position 23h47m40.254s -28d08m39.413s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.50144362449646 0 0 0
+      spectral-index { -1.48213350772858, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002008-320658"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h20m08.503s -32d06m58.181s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.42817521095276 0 0 0
+      spectral-index { -0.868059694766998, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001952-312025"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h19m52.457s -31d20m25.703s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.0847076177597 0 0 0
+      spectral-index { -0.72206050157547, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001945-360159"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h19m45.771s -36d01m59.27s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.27515983581543 0 0 0
+      spectral-index { -0.787589073181152, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235154-275823"
+  cluster "cluster2"
+  component {
+    type point
+    position 23h51m54.983s -27d58m23.416s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.768218517303467 0 0 0
+      spectral-index { -0.64766001701355, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002135-333434"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h21m35.762s -33d34m34.205s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.14048612117767 0 0 0
+      spectral-index { -0.69330096244812, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000325-272636"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h03m25.35s -27d26m36.98s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.499937802553177 0 0 0
+      spectral-index { -0.745627641677856, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002220-334009"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h22m20.372s -33d40m09.082s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.978820502758026 0 0 0
+      spectral-index { -0.784130036830902, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002131-345239"
+  cluster "cluster2"
+  component {
+    type point
+    position 00h21m31.406s -34d52m39.558s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.814034879207611 0 0 0
+      spectral-index { -0.805834591388702, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002549-260211"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h25m49.148s -26d02m11.403s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 17.1214294433594 0 0 0
+      spectral-index { 0.049620658159256, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004503-243417"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h45m03.366s -24d34m17.121s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.46530389785767 0 0 0
+      spectral-index { -0.866901397705078, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003956-253425"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h39m56.269s -25d34m25.031s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.05981636047363 0 0 0
+      spectral-index { -0.916975319385529, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002409-255545"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h24m09.715s -25d55m45.66s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.21333932876587 0 0 0
+      spectral-index { -0.671752214431763, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010041-223955"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h00m41.79s -22d39m55.48s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.11954522132874 0 0 0
+      spectral-index { -0.965531229972839, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010612-240634"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h06m12.657s -24d06m34.917s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.75029146671295 0 0 0
+      spectral-index { -0.747662484645844, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004601-255703"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h46m01.73s -25d57m03.182s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.720150828361511 0 0 0
+      spectral-index { -0.930342137813568, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002110-271105"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h21m10.463s -27d11m05.27s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.497767806053162 0 0 0
+      spectral-index { -0.947537839412689, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002458-273819"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h24m58.326s -27d38m19.775s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.522469997406006 0 0 0
+      spectral-index { -0.761707842350006, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004537-273534"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h45m37.309s -27d35m34.712s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.785384833812714 0 0 0
+      spectral-index { -0.025534862652421, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004733-251710"
+  cluster "cluster3"
+  component {
+    type gaussian
+    shape 171.739227294922 150.189331054688 29.0254898071289
+    position 00h47m33.147s -25d17m10.524s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 8.91542816162109 0 0 0
+      spectral-index { -0.564978539943695, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010241-215227"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h02m41.048s -21d52m27.061s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 7.20483922958374 0 0 0
+      spectral-index { -1.32292592525482, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010244-273124"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h02m44.199s -27d31m24.588s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 5.44101190567017 0 0 0
+      spectral-index { -0.827313721179962, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002729-273113"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h27m29.5s -27d31m13.643s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.11175894737244 0 0 0
+      spectral-index { -0.755621016025543, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J011651-205202"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h16m51.253s -20d52m02.102s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 12.886570930481 0 0 0
+      spectral-index { -0.0976293981075287, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003150-265223"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h31m50.509s -26d52m23.353s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.87392771244049 0 0 0
+      spectral-index { -0.712605535984039, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005827-240101"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h58m27.761s -24d01m01.736s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.4233410358429 0 0 0
+      spectral-index { -0.973393440246582, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002314-270321"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h23m14.897s -27d03m21.091s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.30634665489197 0 0 0
+      spectral-index { -0.851496040821075, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002157-261914"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h21m57.761s -26d19m14.594s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.27194559574127 0 0 0
+      spectral-index { -0.914977729320526, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005429-235127"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h54m29.888s -23d51m27.982s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.2612783908844 0 0 0
+      spectral-index { -0.90349280834198, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003145-262538"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h31m45.352s -26d25m38.91s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.25031268596649 0 0 0
+      spectral-index { -0.923616945743561, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010452-252052"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h04m52.331s -25d20m52.304s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.93782377243042 0 0 0
+      spectral-index { -0.571271121501923, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010335-271506"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h03m35.579s -27d15m06.729s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.69457244873047 0 0 0
+      spectral-index { -0.421652644872665, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005242-215540"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h52m42.837s -21d55m40.97s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.99137151241302 0 0 0
+      spectral-index { -0.72973769903183, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005053-230650"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h50m53.746s -23d06m50.841s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.68886208534241 0 0 0
+      spectral-index { -0.765568912029266, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004154-274855"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h41m54.251s -27d48m55.114s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.16580355167389 0 0 0
+      spectral-index { -0.644567847251892, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003906-242506"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h39m06.769s -24d25m06.665s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.06057989597321 0 0 0
+      spectral-index { -0.989317059516907, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J013027-260956"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h30m27.746s -26d09m56.091s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 9.09897041320801 0 0 0
+      spectral-index { -0.892906606197357, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002551-271722"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h25m51.695s -27d17m22.129s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.860948204994202 0 0 0
+      spectral-index { -0.580142974853516, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J012445-251714"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h24m45.341s -25d17m14.013s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 6.04190921783447 0 0 0
+      spectral-index { -0.74850857257843, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004138-234335"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h41m38.885s -23d43m35.158s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.03884470462799 0 0 0
+      spectral-index { -1.01954996585846, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J011815-255148"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h18m15.501s -25d51m48.245s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.68913817405701 0 0 0
+      spectral-index { -0.674480676651001, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003337-252730"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h33m37.034s -25d27m30.95s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.788256585597992 0 0 0
+      spectral-index { -1.03371465206146, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004649-224251"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h46m49.294s -22d42m51.103s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.13750433921814 0 0 0
+      spectral-index { -0.805769503116608, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004046-272325"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h40m46.821s -27d23m25.859s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.880323529243469 0 0 0
+      spectral-index { -0.812823712825775, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J011442-204239"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h14m42.033s -20d42m39.505s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.65292739868164 0 0 0
+      spectral-index { -0.947183907032013, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004406-271259"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h44m06.812s -27d12m59.384s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.933298766613007 0 0 0
+      spectral-index { -0.786227345466614, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010247-215651"
+  cluster "cluster3"
+  component {
+    type gaussian
+    shape 215.760986328125 181.846817016602 17.1862621307373
+    position 01h02m47.571s -21d56m51.983s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.59273254871368 0 0 0
+      spectral-index { -1.50122404098511, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003327-273148"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h33m27.372s -27d31m48.614s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.720459997653961 0 0 0
+      spectral-index { -0.832950592041016, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003543-273801"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h35m43.617s -27d38m01.812s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.75241756439209 0 0 0
+      spectral-index { -0.738396286964417, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003820-262642"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h38m20.495s -26d26m42.006s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.735575079917908 0 0 0
+      spectral-index { -0.920083224773407, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J011834-184910"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h18m34.192s -18d49m10.145s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.85725688934326 0 0 0
+      spectral-index { -0.788621246814728, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005838-215959"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h58m38.723s -21d59m59.67s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.34901642799377 0 0 0
+      spectral-index { -0.830884993076324, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002204-255503"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h22m04.151s -25d55m03.218s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.549900531768799 0 0 0
+      spectral-index { -1.02353954315186, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003714-270740"
+  cluster "cluster3"
+  component {
+    type gaussian
+    shape 180.223754882812 134.293395996094 -3.92436742782593
+    position 00h37m14.535s -27d07m40.162s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.650468289852142 0 0 0
+      spectral-index { -0.930071294307709, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003421-245450"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h34m21.823s -24d54m50.405s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.65656054019928 0 0 0
+      spectral-index { -0.696061968803406, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003416-274647"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h34m16.023s -27d46m47.302s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.584743916988373 0 0 0
+      spectral-index { -1.22643518447876, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005756-252233"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h57m56.918s -25d22m33.406s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.1115665435791 0 0 0
+      spectral-index { -0.700273990631104, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003757-250422"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h37m57.179s -25d04m22.209s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.636736214160919 0 0 0
+      spectral-index { -0.745456039905548, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003347-255135"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h33m47.524s -25d51m35.872s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.572469532489777 0 0 0
+      spectral-index { -0.880942463874817, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J011544-241719"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h15m44.388s -24d17m19.211s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.22185301780701 0 0 0
+      spectral-index { -0.88887095451355, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004016-271908"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h40m16.703s -27d19m08.524s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.626906991004944 0 0 0
+      spectral-index { -0.7862588763237, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003553-251442"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h35m53.807s -25d14m42.182s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.559514760971069 0 0 0
+      spectral-index { -1.07986605167389, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005651-274911"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h56m51.132s -27d49m11.113s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.923568725585938 0 0 0
+      spectral-index { -0.835668683052063, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010006-222606"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h00m06.033s -22d26m06.232s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.15677714347839 0 0 0
+      spectral-index { -0.86986917257309, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003555-262724"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h35m55.927s -26d27m24.592s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.571436166763306 0 0 0
+      spectral-index { -0.646018266677856, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002704-260507"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h27m04.854s -26d05m07.885s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.55378645658493 0 0 0
+      spectral-index { -0.177648484706879, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003221-240505"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h32m21.397s -24d05m05.152s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.16193795204163 0 0 0
+      spectral-index { -0.842916488647461, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003722-230825"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h37m22.291s -23d08m25.028s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.78002071380615 0 0 0
+      spectral-index { -0.944308161735535, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004411-221219"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h44m11.238s -22d12m19.222s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.24594402313232 0 0 0
+      spectral-index { -0.956302285194397, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003824-225256"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h38m24.863s -22d52m56.086s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.87399172782898 0 0 0
+      spectral-index { -0.743643820285797, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002535-245948"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h25m35.538s -24d59m48.375s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.11151587963104 0 0 0
+      spectral-index { -1.02794504165649, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J012027-152011"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h20m27.024s -15d20m11.315s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 17.4692687988281 0 0 0
+      spectral-index { -0.622717082500458, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002147-255300"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h21m47.874s -25d53m00.81s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.982155621051788 0 0 0
+      spectral-index { -0.881696760654449, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003701-232641"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h37m01.097s -23d26m41.347s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.1057950258255 0 0 0
+      spectral-index { -0.808722198009491, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002826-280121"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h28m26.481s -28d01m21.361s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.678785681724548 0 0 0
+      spectral-index { -0.97789990901947, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004848-285001"
+  cluster "cluster3"
+  component {
+    type gaussian
+    shape 163.738723754883 139.888565063477 45.2355346679687
+    position 00h48m48.152s -28d50m01.238s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.830732464790344 0 0 0
+      spectral-index { -0.892799973487854, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002427-253134"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h24m27.102s -25d31m34.441s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.530732154846191 0 0 0
+      spectral-index { -0.84840202331543, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005124-211028"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h51m24.648s -21d10m28.899s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.02307677268982 0 0 0
+      spectral-index { -0.742917895317078, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003849-222521"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h38m49.825s -22d25m21.606s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.688510894775391 0 0 0
+      spectral-index { -0.835889339447021, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002834-244729"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h28m34.552s -24d47m29.428s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.535999715328217 0 0 0
+      spectral-index { -0.849407553672791, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002308-250232"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h23m08.474s -25d02m32.82s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 8.20603466033936 0 0 0
+      spectral-index { -0.717562854290009, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010817-160418"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h08m17.015s -16d04m18.247s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 19.190673828125 0 0 0
+      spectral-index { -0.77386885881424, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003203-225759"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h32m03.352s -22d57m59.123s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.98402833938599 0 0 0
+      spectral-index { -0.942060828208923, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010010-174841"
+  cluster "cluster3"
+  component {
+    type point
+    position 01h00m10.296s -17d48m41.883s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.86986112594604 0 0 0
+      spectral-index { -0.639969408512115, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003534-282501"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h35m34.667s -28d25m01.831s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.13359546661377 0 0 0
+      spectral-index { -0.724267542362213, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005338-191558"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h53m38.599s -19d15m58.454s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.34295225143433 0 0 0
+      spectral-index { -0.71715921163559, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002426-275955"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h24m26.965s -27d59m55.976s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.777616024017334 0 0 0
+      spectral-index { -1.02514374256134, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003503-225202"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h35m03.22s -22d52m02.726s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.933634459972382 0 0 0
+      spectral-index { -0.931117475032806, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001418-273120"
+  cluster "cluster3"
+  component {
+    type gaussian
+    shape 187.354965209961 136.718566894531 -63.4034576416016
+    position 00h14m18.315s -27d31m20.159s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.547981917858124 0 0 0
+      spectral-index { -1.1087394952774, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004117-285218"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h41m17.403s -28d52m18.361s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.680960893630981 0 0 0
+      spectral-index { -0.809588730335236, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002600-243239"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h26m00.534s -24d32m39.377s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.558718323707581 0 0 0
+      spectral-index { -0.677419722080231, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004517-202551"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h45m17.169s -20d25m51.448s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.909144282341003 0 0 0
+      spectral-index { -0.838959395885468, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001427-281220"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h14m27.14s -28d12m20.142s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.494830250740051 0 0 0
+      spectral-index { -0.700491309165955, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005906-170033"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h59m06.624s -17d00m33.845s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 9.96067428588867 0 0 0
+      spectral-index { -0.787660181522369, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004112-290744"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h41m12.072s -29d07m44.749s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.62855172157288 0 0 0
+      spectral-index { -0.788676917552948, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002058-245054"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h20m58.926s -24d50m54.041s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.13596951961517 0 0 0
+      spectral-index { -0.809800267219543, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004048-204329"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h40m48.064s -20d43m29.425s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.44757533073425 0 0 0
+      spectral-index { -0.527008414268494, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001726-250422"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h17m26.679s -25d04m22.058s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.727539241313934 0 0 0
+      spectral-index { -0.756527960300446, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001943-245222"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h19m43.523s -24d52m22.152s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.711948692798615 0 0 0
+      spectral-index { -0.95327764749527, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004258-203649"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h42m58.228s -20d36m49.763s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.29903614521027 0 0 0
+      spectral-index { -0.397989362478256, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002615-235131"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h26m15.172s -23d51m31.615s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.725996613502502 0 0 0
+      spectral-index { -1.13959014415741, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005037-292128"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h50m37.589s -29d21m28.586s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.06704878807068 0 0 0
+      spectral-index { -0.883451342582703, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002355-235716"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h23m55.264s -23d57m16.008s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.72290563583374 0 0 0
+      spectral-index { -0.613330662250519, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003830-290450"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h38m30.732s -29d04m50.65s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.826697289943695 0 0 0
+      spectral-index { -0.706525921821594, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003521-214945"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h35m21.24s -21d49m45.322s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.840118527412415 0 0 0
+      spectral-index { -0.790692925453186, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003829-211957"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h38m29.765s -21d19m57.407s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.05252921581268 0 0 0
+      spectral-index { 0.148823291063309, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004008-290247"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h40m08.855s -29d02m47.926s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.645596027374268 0 0 0
+      spectral-index { -0.920564115047455, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002430-292847"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h24m30.153s -29d28m47.806s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 12.6012887954712 0 0 0
+      spectral-index { -0.857148826122284, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003246-293107"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h32m46.187s -29d31m07.25s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.24446821212769 0 0 0
+      spectral-index { -0.423924833536148, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002829-293436"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h28m29.176s -29d34m36.437s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.3898800611496 0 0 0
+      spectral-index { -0.893126845359802, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003102-220701"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h31m02.427s -22d07m01.882s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.43520450592041 0 0 0
+      spectral-index { -0.660719633102417, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001915-243942"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h19m15.77s -24d39m42.674s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.09178650379181 0 0 0
+      spectral-index { -1.04637253284454, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001343-253709"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h13m43.607s -25d37m09.119s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.14160180091858 0 0 0
+      spectral-index { -0.534989297389984, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003244-214414"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h32m44.664s -21d44m14.709s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.46550011634827 0 0 0
+      spectral-index { -0.697365403175354, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003323-214154"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h33m23.738s -21d41m54.077s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.40590023994446 0 0 0
+      spectral-index { -0.52457982301712, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002301-294129"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h23m01.719s -29d41m29.557s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.791139960289001 0 0 0
+      spectral-index { -0.0953713953495026, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003430-213342"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h34m30.713s -21d33m42.123s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.70539528131485 0 0 0
+      spectral-index { -0.814910113811493, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001437-242904"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h14m37.048s -24d29m04.258s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.05437707901001 0 0 0
+      spectral-index { -0.968587338924408, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001843-240041"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h18m43.113s -24d00m41.576s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.856347322463989 0 0 0
+      spectral-index { -0.939349949359894, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003830-202251"
+  cluster "cluster3"
+  component {
+    type point
+    position 00h38m30.899s -20d22m51.794s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.78793728351593 0 0 0
+      spectral-index { -0.851645052433014, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235050-245702"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h50m50.171s -24d57m02.385s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 7.67530059814453 0 0 0
+      spectral-index { -0.95693826675415, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J231956-272735"
+  cluster "cluster4"
+  component {
+    type gaussian
+    shape 210.349258422852 133.265914916992 -1.94340121746063
+    position 23h19m56.287s -27d27m35.379s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 10.7102365493774 0 0 0
+      spectral-index { -0.878309607505798, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234545-240232"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h45m45.571s -24d02m32.037s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.13591885566711 0 0 0
+      spectral-index { -0.952036917209625, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235708-181743"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h57m08.159s -18d17m43.422s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.57407093048096 0 0 0
+      spectral-index { -0.84327495098114, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000402-230657"
+  cluster "cluster4"
+  component {
+    type gaussian
+    shape 166.638046264648 136.448211669922 -52.3819732666016
+    position 00h04m02.611s -23d06m57.467s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.18257427215576 0 0 0
+      spectral-index { -0.817472636699677, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232834-210542"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h28m34.438s -21d05m42.993s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.38621616363525 0 0 0
+      spectral-index { -0.834914803504944, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000349-252045"
+  cluster "cluster4"
+  component {
+    type gaussian
+    shape 215.505722045898 122.974906921387 -63.190055847168
+    position 00h03m49.868s -25d20m45.087s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.16618061065674 0 0 0
+      spectral-index { -0.883115947246552, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000212-215307"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h02m12.003s -21d53m06.996s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.21136832237244 0 0 0
+      spectral-index { -0.818832159042358, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234451-274105"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h44m51.262s -27d41m05.133s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.928849399089813 0 0 0
+      spectral-index { -1.04115068912506, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233227-185107"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h32m27.664s -18d51m07.273s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.80993735790253 0 0 0
+      spectral-index { -0.740116894245148, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233650-223507"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h36m50.427s -22d35m07.109s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.16661763191223 0 0 0
+      spectral-index { -0.688142001628876, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235356-200649"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h53m56.572s -20d06m49.783s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.975716829299927 0 0 0
+      spectral-index { -0.569611787796021, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234535-224714"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h45m35.12s -22d47m14.177s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.785808682441711 0 0 0
+      spectral-index { -0.829201281070709, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235113-193044"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h51m13.923s -19d30m44.33s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.853090345859528 0 0 0
+      spectral-index { -0.979692399501801, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233838-261300"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h38m38.269s -26d13m00.153s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.676552176475525 0 0 0
+      spectral-index { -0.901267945766449, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234112-162052"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h41m12.795s -16d20m52.75s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 7.8248462677002 0 0 0
+      spectral-index { -0.853385925292969, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233147-245210"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h31m47.432s -24d52m10.939s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.4970703125 0 0 0
+      spectral-index { -0.917364239692688, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232102-162302"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h21m02.153s -16d23m02.753s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 13.7299976348877 0 0 0
+      spectral-index { -0.694531977176666, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234324-214129"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h43m24.192s -21d41m29.935s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.49273633956909 0 0 0
+      spectral-index { -0.901453673839569, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000347-232938"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h03m47.883s -23d29m38.501s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.47912764549255 0 0 0
+      spectral-index { -0.820844054222107, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232933-192257"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h29m33.574s -19d22m57.658s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 5.68431615829468 0 0 0
+      spectral-index { -0.858450531959534, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235735-211319"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h57m35.552s -21d13m19.166s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.78561854362488 0 0 0
+      spectral-index { -0.51384574174881, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J231949-220416"
+  cluster "cluster4"
+  component {
+    type gaussian
+    shape 193.108245849609 135.263534545898 -5.00487375259399
+    position 23h19m49.68s -22d04m16.146s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 5.92648077011108 0 0 0
+      spectral-index { -1.12970399856567, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235128-231708"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h51m28.396s -23d17m08.142s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.41661167144775 0 0 0
+      spectral-index { -0.933246314525604, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235352-231126"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h53m52.61s -23d11m26.22s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.36477065086365 0 0 0
+      spectral-index { -0.82620769739151, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232447-271916"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h24m47.336s -27d19m16.799s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.03141450881958 0 0 0
+      spectral-index { -0.512261629104614, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235134-160739"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h51m34.387s -16d07m39.208s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.35425281524658 0 0 0
+      spectral-index { -0.865738987922668, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235410-215647"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h54m10.737s -21d56m47.506s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.12663650512695 0 0 0
+      spectral-index { -0.84432065486908, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232848-250806"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h28m48.413s -25d08m06.056s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.06978940963745 0 0 0
+      spectral-index { -0.865397393703461, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235555-181013"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h55m55.745s -18d10m13.696s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.67385816574097 0 0 0
+      spectral-index { -0.721285343170166, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000045-272248"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h00m45.358s -27d22m48.423s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.46983695030212 0 0 0
+      spectral-index { -0.906365871429443, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232103-241043"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h21m03.464s -24d10m43.195s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.58318996429443 0 0 0
+      spectral-index { -0.848054885864258, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234412-240744"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h44m12.29s -24d07m44.413s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.94397366046906 0 0 0
+      spectral-index { -0.520467519760132, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J231007-275752"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h10m07.361s -27d57m52.923s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 5.08847618103027 0 0 0
+      spectral-index { -0.974462449550629, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232831-145415"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h28m31.457s -14d54m15.778s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 6.56487512588501 0 0 0
+      spectral-index { -0.633552491664886, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000217-253912"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h02m17.853s -25d39m12.935s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.26870083808899 0 0 0
+      spectral-index { -0.64611679315567, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235527-241227"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h55m27.678s -24d12m27.949s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.28473234176636 0 0 0
+      spectral-index { -0.853093028068542, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233756-175224"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h37m56.287s -17d52m24.404s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.99434590339661 0 0 0
+      spectral-index { -0.546160280704498, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232519-120727"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h25m19.797s -12d07m27.755s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 11.5915460586548 0 0 0
+      spectral-index { -0.841606318950653, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232938-211332"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h29m38.804s -21d13m32.542s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.46247673034668 0 0 0
+      spectral-index { -0.748748302459717, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233003-180803"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h30m03.318s -18d08m03.302s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.19595766067505 0 0 0
+      spectral-index { -0.904969930648804, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000417-221250"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h04m17.13s -22d12m50.238s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.18754434585571 0 0 0
+      spectral-index { -0.962673962116241, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J231620-272953"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h16m20.178s -27d29m53.449s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.97358250617981 0 0 0
+      spectral-index { -0.900149822235107, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232638-254153"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h26m38.672s -25d41m53.219s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.99212610721588 0 0 0
+      spectral-index { -0.658495366573334, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000636-230803"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h06m36.158s -23d08m03.714s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.00755870342255 0 0 0
+      spectral-index { -0.961798310279846, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000523-230136"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h05m23.895s -23d01m36.384s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.01196217536926 0 0 0
+      spectral-index { -0.954486608505249, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234802-163107"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h48m02.366s -16d31m07.744s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.35396289825439 0 0 0
+      spectral-index { -0.535663545131683, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232049-191917"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h20m49.841s -19d19m17.286s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.33549213409424 0 0 0
+      spectral-index { -0.728933095932007, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J230627-250653"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h06m27.29s -25d06m53.21s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.33064222335815 0 0 0
+      spectral-index { -1.02140867710114, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234457-265008"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h44m57.305s -26d50m08.524s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.1353839635849 0 0 0
+      spectral-index { -0.570756793022156, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234935-163529"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h49m35.867s -16d35m29.782s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.95239281654358 0 0 0
+      spectral-index { -0.983958601951599, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235919-204754"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h59m19.761s -20d47m54.085s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.14120960235596 0 0 0
+      spectral-index { -0.550993859767914, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234216-264911"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h42m16.135s -26d49m11.539s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.09856283664703 0 0 0
+      spectral-index { -0.812678158283234, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234045-230243"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h40m45.674s -23d02m43.724s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.23191332817078 0 0 0
+      spectral-index { -0.707746624946594, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J231438-215552"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h14m38.276s -21d55m52.684s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.104896068573 0 0 0
+      spectral-index { -0.701032996177673, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235900-231629"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h59m00.85s -23d16m29.765s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.870266675949097 0 0 0
+      spectral-index { -0.787997305393219, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000406-250347"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h04m06.5s -25d03m47.808s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.749297857284546 0 0 0
+      spectral-index { -1.11345994472504, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J231635-162543"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h16m35.054s -16d25m43.085s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.82747316360474 0 0 0
+      spectral-index { -0.895471036434174, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235925-242504"
+  cluster "cluster4"
+  component {
+    type gaussian
+    shape 216.365264892578 197.462524414063 -9.68538856506348
+    position 23h59m25.005s -24d25m04.399s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.799293398857117 0 0 0
+      spectral-index { -0.869156897068024, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233118-184038"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h31m18.647s -18d40m38.161s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.04077291488647 0 0 0
+      spectral-index { -0.818366587162018, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235701-213815"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h57m01.289s -21d38m15.264s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.957775592803955 0 0 0
+      spectral-index { -0.597383677959442, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000400-263714"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h04m00.499s -26d37m14.695s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.731265902519226 0 0 0
+      spectral-index { -0.872189700603485, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233620-243925"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h36m20.53s -24d39m25.686s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.08227634429932 0 0 0
+      spectral-index { -1.00045812129974, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232401-223453"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h24m01.787s -22d34m53.005s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.71264171600342 0 0 0
+      spectral-index { -1.04554975032806, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235425-235915"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h54m25.547s -23d59m15.1s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.787658214569092 0 0 0
+      spectral-index { -0.974218189716339, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234959-191226"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h49m59.744s -19d12m26.445s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.17526316642761 0 0 0
+      spectral-index { -0.748634338378906, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J210722-252556"
+  cluster "cluster4"
+  component {
+    type gaussian
+    shape 205.684921264648 160.016204833984 32.9821281433105
+    position 21h07m22.332s -25d25m56.069s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 25.2455711364746 0 0 0
+      spectral-index { -0.720886945724487, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235426-250623"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h54m26.528s -25d06m23.663s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.692660689353943 0 0 0
+      spectral-index { -1.21400952339172, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000059-250501"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h00m59.771s -25d05m01.005s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.672638833522797 0 0 0
+      spectral-index { -0.969587087631226, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235708-222039"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h57m08.591s -22d20m39.519s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.785448133945465 0 0 0
+      spectral-index { -0.744047701358795, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235836-215855"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h58m36.24s -21d58m55.785s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.763288021087646 0 0 0
+      spectral-index { -0.899444282054901, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234442-150407"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h44m42.026s -15d04m07.975s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.04120445251465 0 0 0
+      spectral-index { -0.785807609558105, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233905-192405"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h39m05.12s -19d24m05.863s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.27937638759613 0 0 0
+      spectral-index { -0.694580852985382, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234917-251218"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h49m17.366s -25d12m18.638s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.713677942752838 0 0 0
+      spectral-index { -0.910790622234344, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233727-261547"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h37m27.012s -26d15m47.523s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.836232423782349 0 0 0
+      spectral-index { -1.12333881855011, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235931-212544"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h59m31.597s -21d25m44.691s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.730583310127258 0 0 0
+      spectral-index { -0.863889276981354, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000424-230731"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h04m24.004s -23d07m31.003s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.643770754337311 0 0 0
+      spectral-index { -0.758488059043884, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234830-261024"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h48m30.586s -26d10m24.978s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.681481838226318 0 0 0
+      spectral-index { -0.913458526134491, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235319-271334"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h53m19.834s -27d13m34.396s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.638338506221771 0 0 0
+      spectral-index { -0.774296700954437, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233753-143515"
+  cluster "cluster4"
+  component {
+    type gaussian
+    shape 151.619995117188 142.31526184082 77.8635559082031
+    position 23h37m53.643s -14d35m15.455s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.28039121627808 0 0 0
+      spectral-index { -0.924656867980957, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000124-204002"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h01m24.546s -20d40m02.82s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.727509140968323 0 0 0
+      spectral-index { -0.805964708328247, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000327-225720"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h03m27.544s -22d57m20.533s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.606378734111786 0 0 0
+      spectral-index { -0.895505368709564, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235019-215825"
+  cluster "cluster4"
+  component {
+    type gaussian
+    shape 169.074600219727 133.230102539062 80.3554611206055
+    position 23h50m19.614s -21d58m25.476s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.808017611503601 0 0 0
+      spectral-index { -0.316766530275345, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235754-251425"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h57m54.712s -25d14m25.029s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.617093503475189 0 0 0
+      spectral-index { -0.57686847448349, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235748-192007"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h57m48.567s -19d20m07.933s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.820494532585144 0 0 0
+      spectral-index { -0.873570621013641, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235033-193811"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h50m32.996s -19d38m11.322s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.88286280632019 0 0 0
+      spectral-index { -0.79027646780014, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232951-210545"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h29m51.072s -21d05m45.074s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.2060694694519 0 0 0
+      spectral-index { -0.988283753395081, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234041-214633"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h40m41.191s -21d46m33.198s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.87586522102356 0 0 0
+      spectral-index { -0.843185663223267, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234750-273827"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h47m50.149s -27d38m27.307s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.635026097297668 0 0 0
+      spectral-index { -0.951845943927765, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235553-184242"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h55m53.899s -18d42m42.657s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.866973042488098 0 0 0
+      spectral-index { -0.782361626625061, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234640-203010"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h46m40.239s -20d30m10.437s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.844311535358429 0 0 0
+      spectral-index { -0.668665826320648, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234118-230908"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h41m18.911s -23d09m08.678s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.74395877122879 0 0 0
+      spectral-index { -0.925897657871246, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235006-265502"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h50m06.335s -26d55m02.875s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.573988080024719 0 0 0
+      spectral-index { -0.99030613899231, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232609-282027"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h26m09.104s -28d20m27.798s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.10029172897339 0 0 0
+      spectral-index { -0.484337747097015, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233617-255606"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h36m17.219s -25d56m06.953s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.749749660491943 0 0 0
+      spectral-index { -0.878043234348297, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235846-191448"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h58m46.677s -19d14m48.526s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.725671529769897 0 0 0
+      spectral-index { -0.940512835979462, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J233138-155656"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h31m38.782s -15d56m56.81s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.96449553966522 0 0 0
+      spectral-index { -0.62511157989502, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000649-241257"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h06m49.61s -24d12m57.928s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.49236872792244 0 0 0
+      spectral-index { -0.93299925327301, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J231548-180040"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h15m48.53s -18d00m40.656s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.76292109489441 0 0 0
+      spectral-index { -0.481332570314407, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J232552-254612"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h25m52.632s -25d46m12.688s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.967211842536926 0 0 0
+      spectral-index { -0.969792604446411, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235153-201017"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h51m53.423s -20d10m17.548s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.734929859638214 0 0 0
+      spectral-index { -0.669097423553467, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235147-252046"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h51m47.651s -25d20m46.454s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.539483070373535 0 0 0
+      spectral-index { -0.848112463951111, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J234058-181917"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h40m58.308s -18d19m17.719s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.02233004570007 0 0 0
+      spectral-index { -0.914677500724792, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235005-261902"
+  cluster "cluster4"
+  component {
+    type point
+    position 23h50m05.691s -26d19m02.297s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.536723136901855 0 0 0
+      spectral-index { -0.932263016700745, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000708-253254"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h07m08.908s -25d32m54.703s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.786792039871216 0 0 0
+      spectral-index { -0.860162913799286, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000925-244008"
+  cluster "cluster4"
+  component {
+    type point
+    position 00h09m25.322s -24d40m08.746s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.492282211780548 0 0 0
+      spectral-index { -0.641425371170044, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001559-192916"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h15m59.886s -19d29m16.46s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.91608715057373 0 0 0
+      spectral-index { -0.622133255004883, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002026-201427"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h20m26.494s -20d14m27.13s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.61209988594055 0 0 0
+      spectral-index { -0.859489560127258, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001707-125625"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h17m07.953s -12d56m25.035s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.49419927597046 0 0 0
+      spectral-index { -0.802547097206116, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001137-235917"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h11m37.259s -23d59m17.826s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.986093819141388 0 0 0
+      spectral-index { -0.692555367946625, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001752-222125"
+  cluster "cluster5"
+  component {
+    type gaussian
+    shape 226.341339111328 135.548645019531 36.6729164123535
+    position 00h17m52.86s -22d21m25.826s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.04210603237152 0 0 0
+      spectral-index { -0.744116365909576, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002752-200738"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h27m52.656s -20d07m38.192s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.31307077407837 0 0 0
+      spectral-index { -0.601834297180176, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001251-232719"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h12m51.919s -23d27m19.764s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.882437705993652 0 0 0
+      spectral-index { -0.842043578624725, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003504-141602"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h35m04.587s -14d16m02.886s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.96326553821564 0 0 0
+      spectral-index { -1.05485117435455, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001756-174841"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h17m56.325s -17d48m41.347s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.02647662162781 0 0 0
+      spectral-index { -0.533898115158081, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002034-213322"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h20m34.398s -21d33m22.114s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.721249759197235 0 0 0
+      spectral-index { -0.530566453933716, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002105-184435"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h21m05.84s -18d44m35.816s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.832216143608093 0 0 0
+      spectral-index { -0.577988624572754, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002154-123410"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h21m54.486s -12d34m09.997s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.11137437820435 0 0 0
+      spectral-index { -0.876978635787964, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002255-212404"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h22m55.919s -21d24m04.256s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.600260972976685 0 0 0
+      spectral-index { -0.687819123268127, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003508-200354"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h35m08.644s -20d03m54.105s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 10.1846790313721 0 0 0
+      spectral-index { -0.710624039173126, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002613-200455"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h26m13.771s -20d04m55.004s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 4.69704723358154 0 0 0
+      spectral-index { -0.695551693439484, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002112-191041"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h21m12.886s -19d10m41.533s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.91292810440063 0 0 0
+      spectral-index { -0.781076729297638, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001851-124235"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h18m51.273s -12d42m35.406s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 9.61089897155762 0 0 0
+      spectral-index { -0.627052843570709, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002040-201934"
+  cluster "cluster5"
+  component {
+    type gaussian
+    shape 852.673156738281 170.413833618164 -17.3475685119629
+    position 00h20m40.076s -20d19m34.075s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.27356815338135 0 0 0
+      spectral-index { 0.0740782171487808, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001619-143009"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h16m19.588s -14d30m09.091s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 5.59162425994873 0 0 0
+      spectral-index { -1.10902214050293, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000816-193957"
+  cluster "cluster5"
+  component {
+    type gaussian
+    shape 228.765899658203 148.716659545898 -54.9359474182129
+    position 00h08m16.187s -19d39m57.883s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.80578303337097 0 0 0
+      spectral-index { -0.84021270275116, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001757-223800"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h17m57.993s -22d38m00.405s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.89737665653229 0 0 0
+      spectral-index { -0.930429518222809, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001225-184801"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h12m25.036s -18d48m01.412s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.399733543396 0 0 0
+      spectral-index { -0.919233620166779, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002021-202846"
+  cluster "cluster5"
+  component {
+    type gaussian
+    shape 169.483413696289 130.936248779297 21.8125762939453
+    position 00h20m21.522s -20d28m46.247s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.089919090271 0 0 0
+      spectral-index { -0.766621887683868, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001403-233828"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h14m03.056s -23d38m28.138s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.46329712867737 0 0 0
+      spectral-index { -0.956232607364655, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003424-175924"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h34m24.187s -17d59m24.102s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.70785927772522 0 0 0
+      spectral-index { -0.831226289272308, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002448-204259"
+  cluster "cluster5"
+  component {
+    type gaussian
+    shape 158.239318847656 139.08088684082 19.3198337554932
+    position 00h24m48.949s -20d42m59.865s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.70359015464783 0 0 0
+      spectral-index { -0.735872209072113, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001038-185929"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h10m38.382s -18d59m29.369s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.71438252925873 0 0 0
+      spectral-index { -0.950153827667236, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002945-174038"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h29m45.157s -17d40m38.683s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.19244170188904 0 0 0
+      spectral-index { -0.878228485584259, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001328-192954"
+  cluster "cluster5"
+  component {
+    type gaussian
+    shape 178.370819091797 164.498397827148 -53.150505065918
+    position 00h13m28.001s -19d29m54.473s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.45116603374481 0 0 0
+      spectral-index { -1.47284865379333, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004354-160447"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h43m54.271s -16d04m47.904s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.53157162666321 0 0 0
+      spectral-index { -0.630806386470795, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001742-222444"
+  cluster "cluster5"
+  component {
+    type gaussian
+    shape 214.724090576172 141.356475830078 28.5461292266846
+    position 00h17m42.454s -22d24m44.033s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.27158224582672 0 0 0
+      spectral-index { -0.758595407009125, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003537-163456"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h35m37.17s -16d34m56.397s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.56304311752319 0 0 0
+      spectral-index { -0.588449537754059, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002342-210446"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h23m42.014s -21d04m46.448s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.24929344654083 0 0 0
+      spectral-index { -1.11765825748444, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000838-171037"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h08m38.456s -17d10m37.928s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.62439334392548 0 0 0
+      spectral-index { -0.832223534584045, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000905-205630"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h09m05.982s -20d56m30.765s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.22996401786804 0 0 0
+      spectral-index { -0.0960195437073708, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002605-203644"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h26m05.553s -20d36m44.784s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.19589912891388 0 0 0
+      spectral-index { -0.692302167415619, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001004-231644"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h10m04.963s -23d16m44.7s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.934355914592743 0 0 0
+      spectral-index { -0.789794206619263, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001859-102248"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h18m59.239s -10d22m48.876s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 6.35743284225464 0 0 0
+      spectral-index { -0.963481783866882, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001702-205913"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h17m02.964s -20d59m13.301s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.06311631202698 0 0 0
+      spectral-index { -0.56909316778183, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002137-214641"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h21m37.188s -21d46m41.733s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.981262922286987 0 0 0
+      spectral-index { -0.758572041988373, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004026-151928"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h40m26.948s -15d19m28.468s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.53846311569214 0 0 0
+      spectral-index { -0.818799316883087, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003352-174025"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h33m52.741s -17d40m25.012s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.66584873199463 0 0 0
+      spectral-index { -0.551879227161407, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003159-210933"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h31m59.526s -21d09m33.177s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.06712973117828 0 0 0
+      spectral-index { -0.832080602645874, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002609-124749"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h26m09.425s -12d47m49.358s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.41261458396912 0 0 0
+      spectral-index { -0.610982477664948, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002305-185552"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h23m05.19s -18d55m52.354s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.11687469482422 0 0 0
+      spectral-index { -0.852081537246704, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002822-170651"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h28m22.48s -17d06m51.424s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.42537331581116 0 0 0
+      spectral-index { -0.921957671642303, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003313-182602"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h33m13.355s -18d26m02.064s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.33333992958069 0 0 0
+      spectral-index { -0.689213812351227, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001227-183526"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h12m27.952s -18d35m26.157s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.09773004055023 0 0 0
+      spectral-index { -0.879404962062836, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001902-232059"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h19m02.564s -23d20m59.837s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.728702902793884 0 0 0
+      spectral-index { -1.02484536170959, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003352-161053"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h33m52.438s -16d10m53.069s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.66466355323792 0 0 0
+      spectral-index { -0.808943212032318, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002200-202709"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h22m00.721s -20d27m09.726s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.886332869529724 0 0 0
+      spectral-index { -0.867990791797638, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002957-114340"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h29m57.845s -11d43m40.342s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.87012767791748 0 0 0
+      spectral-index { -0.830782473087311, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003711-200253"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h37m11.049s -20d02m53.721s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.09730184078217 0 0 0
+      spectral-index { -0.700891256332397, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004304-190805"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h43m04.483s -19d08m05.692s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.23128592967987 0 0 0
+      spectral-index { -0.998314499855042, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001649-190030"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h16m49.689s -19d00m30.762s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.00013065338135 0 0 0
+      spectral-index { -0.440747439861298, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000830-141958"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h08m30.976s -14d19m58.056s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.91030383110046 0 0 0
+      spectral-index { -0.588644504547119, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002623-220248"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h26m23.341s -22d02m48.867s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.786709666252136 0 0 0
+      spectral-index { -0.683489859104156, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004130-092221"
+  cluster "cluster5"
+  component {
+    type gaussian
+    shape 197.136474609375 171.67317199707 18.1730995178223
+    position 00h41m30.656s -09d22m21.269s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 7.76671504974365 0 0 0
+      spectral-index { -1.6084543466568, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002211-224906"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h22m11.968s -22d49m06.368s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.695327997207642 0 0 0
+      spectral-index { -0.884605765342712, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J010422-123515"
+  cluster "cluster5"
+  component {
+    type point
+    position 01h04m22.415s -12d35m15.016s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 7.145188331604 0 0 0
+      spectral-index { -0.579918324947357, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J004903-162809"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h49m03.856s -16d28m09.086s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.96252238750458 0 0 0
+      spectral-index { -0.78084272146225, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001053-215659"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h10m53.734s -21d56m59.845s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.652201354503632 0 0 0
+      spectral-index { -0.783897936344147, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002346-193123"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h23m46.702s -19d31m23.977s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.799575805664062 0 0 0
+      spectral-index { -0.838509082794189, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002632-212727"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h26m32.446s -21d27m27.166s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.673045933246613 0 0 0
+      spectral-index { -0.976897478103638, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003446-183038"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h34m46.509s -18d30m38.425s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.941173434257507 0 0 0
+      spectral-index { -0.983596920967102, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000854-160847"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h08m54.463s -16d08m47.735s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.12465178966522 0 0 0
+      spectral-index { -0.754165589809418, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003057-185425"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h30m57.449s -18d54m25.226s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.847125589847565 0 0 0
+      spectral-index { -0.862354099750519, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002056-190853"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h20m56.441s -19d08m53.318s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.764401435852051 0 0 0
+      spectral-index { -0.747385501861572, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002043-220828"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h20m43.308s -22d08m28.736s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.585069119930267 0 0 0
+      spectral-index { -0.887633681297302, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003723-190428"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h37m23.635s -19d04m28.966s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.826282143592834 0 0 0
+      spectral-index { -1.35795748233795, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001117-211608"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h11m17.645s -21d16m08.067s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.586371183395386 0 0 0
+      spectral-index { -0.788773059844971, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J005539-154421"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h55m39.266s -15d44m21.441s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.0733950138092 0 0 0
+      spectral-index { -0.934047043323517, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002222-155635"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h22m22.298s -15d56m35.002s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.0845559835434 0 0 0
+      spectral-index { -0.826551258563995, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003648-193152"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h36m48.134s -19d31m52.644s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.800459623336792 0 0 0
+      spectral-index { -0.940391063690186, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003319-174427"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h33m18.998s -17d44m27.391s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.916064739227295 0 0 0
+      spectral-index { -0.968578040599823, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J003821-185153"
+  cluster "cluster5"
+  component {
+    type gaussian
+    shape 180.113662719727 124.791038513184 -64.4796295166016
+    position 00h38m21.626s -18d51m53.766s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.926396071910858 0 0 0
+      spectral-index { -0.586889684200287, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J001640-231133"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h16m40.113s -23d11m33.23s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.503338992595673 0 0 0
+      spectral-index { -0.838837563991547, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J002609-150247"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h26m09.233s -15d02m47.469s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.26331388950348 0 0 0
+      spectral-index { -0.775799334049225, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000342-174024"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h03m42.71s -17d40m24.889s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.77246522903442 0 0 0
+      spectral-index { -1.04562342166901, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000309-144025"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h03m09.826s -14d40m25.586s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.94703912734985 0 0 0
+      spectral-index { -0.838865995407104, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000221-140641"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h02m21.507s -14d06m41.694s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 2.87367796897888 0 0 0
+      spectral-index { -0.634306848049164, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000327-154702"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h03m27.186s -15d47m02.868s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.69394826889038 0 0 0
+      spectral-index { -0.717206597328186, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000334-151702"
+  cluster "cluster5"
+  component {
+    type gaussian
+    shape 160.732666015625 147.511276245117 -58.8606147766113
+    position 00h03m34.206s -15d17m02.46s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.46634578704834 0 0 0
+      spectral-index { -0.878966331481934, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000310-161503"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h03m10.198s -16d15m03.797s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.30384135246277 0 0 0
+      spectral-index { -0.629607021808624, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000057-105435"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h00m57.385s -10d54m34.997s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.59926295280457 0 0 0
+      spectral-index { -1.06498980522156, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000547-193905"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h05m47.892s -19d39m05.457s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.767159044742584 0 0 0
+      spectral-index { -0.785807132720947, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000315-153012"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h03m15.733s -15d30m12.016s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.19228756427765 0 0 0
+      spectral-index { -0.837060272693634, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000322-172708"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h03m22.066s -17d27m08.744s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 8.83152294158936 0 0 0
+      spectral-index { -0.675203680992126, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000105-165921"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h01m05.476s -16d59m21.287s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.84738516807556 0 0 0
+      spectral-index { -0.882098317146301, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000141-154034"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h01m41.424s -15d40m34.917s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.70717597007751 0 0 0
+      spectral-index { -0.735886752605438, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000503-194952"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h05m03.928s -19d49m52.744s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 0.820670008659363 0 0 0
+      spectral-index { -0.725679457187653, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000040-142342"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h00m40.059s -14d23m42.613s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.71023499965668 0 0 0
+      spectral-index { -0.885879576206207, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J000106-174125"
+  cluster "cluster5"
+  component {
+    type point
+    position 00h01m06.492s -17d41m25.204s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.06862425804138 0 0 0
+      spectral-index { -0.533845484256744, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235731-112540"
+  cluster "cluster5"
+  component {
+    type point
+    position 23h57m31.26s -11d25m40.764s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 3.03505682945251 0 0 0
+      spectral-index { -0.614827752113342, 0 }
+    }
+  }
+}
+source {
+  name "GLEAM J235815-180147"
+  cluster "cluster5"
+  component {
+    type point
+    position 23h58m15.117s -18d01m47.934s
+    sed {
+      frequency 200 MHz
+      fluxdensity Jy 1.37160122394562 0 0 0
+      spectral-index { -0.645583868026733, 0 }
+    }
+  }
+}
