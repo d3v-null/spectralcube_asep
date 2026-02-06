@@ -21,8 +21,30 @@ RUN apt update && apt-get --no-install-recommends install -y \
 RUN source /opt/spack/share/spack/setup-env.sh && \
     rm -rf /opt/ska-sdp-spack && \
     git clone https://gitlab.com/ska-telescope/sdp/ska-sdp-spack.git /opt/ska-sdp-spack && \
+    git checkout 2026.02.1 && \
     sed -i 's/namespace: ska-sdp-spack/namespace: ska_sdp_spack/' /opt/ska-sdp-spack/repo.yaml || true && \
     spack repo add /opt/ska-sdp-spack
+
+# EveryBeam: use upstream fix from master (commit 2614beaf).
+RUN source /opt/spack/share/spack/setup-env.sh && \
+    python3 - <<'PY'
+import pathlib
+p = pathlib.Path('/opt/ska-sdp-spack/packages/everybeam/package.py')
+txt = p.read_text()
+# Add git commit sha to the package recipe so we can install it by commit hash.
+ver_line = '    version("0.8.0.20251125", commit="2614beafba64f5f5d326b783c486c765a3729889", submodules=True)\n'
+if ver_line not in txt:
+    # Insert near the top of the version list. If a master/develop version exists,
+    # insert after it; otherwise insert after the class docstring/variants area.
+    lines = txt.splitlines(True)
+    # Find first existing version() line.
+    idx = next((i for i,l in enumerate(lines) if l.lstrip().startswith('version(')), None)
+    if idx is None:
+        raise SystemExit('everybeam package.py: no version() lines found')
+    lines.insert(idx, ver_line)
+    txt = ''.join(lines)
+    p.write_text(txt)
+PY
 
 # ----------------
 # Spack environment setup: config + concretize
@@ -65,8 +87,8 @@ RUN --mount=type=cache,target=/opt/buildcache \
     # Add + concretize.
     spack -e /opt/spack_env add \
       'hdf5+threadsafe' \
-      'everybeam@0.8.0: ~python' \
-      'dp3@master~python' && \
+      'everybeam@=0.8.0.20251125 ~python' \
+      'dp3@6.5.1.20260109 ~python' && \
     spack -e /opt/spack_env concretize --force && \
     # Cap build parallelism for reliability.
     spack -e /opt/spack_env config add "config:build_jobs:4"
@@ -79,28 +101,6 @@ RUN --mount=type=cache,target=/opt/buildcache \
     source /opt/spack/share/spack/setup-env.sh && \
     spack -e /opt/spack_env install --use-buildcache=auto --reuse \
     --only=dependencies --no-check-signature --fail-fast --test=root
-
-# EveryBeam: use upstream fix from master (commit 2614beaf). No patching needed.
-# Add a Spack version entry that pins that commit as 0.8.0.
-RUN source /opt/spack/share/spack/setup-env.sh && \
-    python3 - <<'PY'
-import pathlib
-p = pathlib.Path('/opt/ska-sdp-spack/packages/everybeam/package.py')
-txt = p.read_text()
-ver_line = '    version("0.8.0", commit="2614beaf", submodules=True)\n'
-if 'version("0.8.0",' not in txt and ver_line not in txt:
-    # Insert near the top of the version list. If a master/develop version exists,
-    # insert after it; otherwise insert after the class docstring/variants area.
-    lines = txt.splitlines(True)
-    # Find first existing version() line.
-    idx = next((i for i,l in enumerate(lines) if l.lstrip().startswith('version(')), None)
-    if idx is None:
-        raise SystemExit('everybeam package.py: no version() lines found')
-    lines.insert(idx, ver_line)
-    txt = ''.join(lines)
-    p.write_text(txt)
-print('everybeam: ensured version 0.8.0@2614beaf present')
-PY
 
 # ----------------
 # Spack install: roots (dp3 + everybeam + hdf5)

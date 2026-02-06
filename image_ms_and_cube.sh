@@ -22,7 +22,7 @@ set -euo pipefail
 #   <base>-XX-image-cube.fits (and YY)
 
 ms=${1:?"MS path required"}
-prefix=${2:-img}
+prefix=${2:-img/}
 
 IM_SIZE=${IM_SIZE:-2048}
 FOV_DEG=${FOV_DEG:-120}
@@ -103,19 +103,19 @@ if [[ "$APPLY_PRIMARY_BEAM" == "1" ]]; then
 fi
 
 if [[ "$have_wsclean" == "1" ]]; then
-  WSCLEAN_TEMP_DIR=${WSCLEAN_TEMP_DIR:-}
-WSCLEAN_THREADS=${WSCLEAN_THREADS:-}
+  WSCLEAN_TEMP_DIR=${WSCLEAN_TEMP_DIR:-/tmp}
+  WSCLEAN_THREADS=${WSCLEAN_THREADS:-}
 
-TD_ARGS=""
-if [[ -n "${WSCLEAN_TEMP_DIR}" ]]; then
-  TD_ARGS="-temp-dir ${WSCLEAN_TEMP_DIR}"
-fi
-J_ARGS=""
-if [[ -n "${WSCLEAN_THREADS}" ]]; then
-  J_ARGS="-j ${WSCLEAN_THREADS}"
-fi
+  TD_ARGS=""
+  if [[ -n "${WSCLEAN_TEMP_DIR}" ]]; then
+    TD_ARGS="-temp-dir ${WSCLEAN_TEMP_DIR}"
+  fi
+  J_ARGS=""
+  if [[ -n "${WSCLEAN_THREADS}" ]]; then
+    J_ARGS="-j ${WSCLEAN_THREADS}"
+  fi
 
-wsclean -name "$base" \
+  OPENBLAS_NUM_THREADS=1 wsclean -name "$base" \
     $J_ARGS \
     $TD_ARGS \
     -size "$IM_SIZE" "$IM_SIZE" -scale "$scale" \

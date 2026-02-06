@@ -2,62 +2,103 @@
 - https://stellar-h2020.eu/index.php/2023/05/23/introduction-to-lofar-data-processing-tutorial/#:~:text=cal
 - https://support.astron.nl/LOFARImagingCookbook/
 - https://sagecal.sourceforge.net/tutorial/html/index.html
-- 
+-
 
 
 to actually use dp3 with a hyperdrive sky model, need to convert to AO with hyperdrive, then DP3 format with lofartools
 ## Lofartools
+
+```bash
+docker run --rm -v "$PWD:$PWD" -w "$PWD" satyapan/lofartools:0.1 ls /software/lofartools/build/
+addimg
+aegean2model
+aoop
+applymask
+bbs2model
+checkms
+cluster
+CMakeCache.txt
+CMakeFiles
+cmake_install.cmake
+colormapper
+editmodel
+external
+fftresample
+first2model
+fits2png
+fitsi
+fitsmodel
+fitssifit
+fitsspectrum
+flaglofar
+flagnans
+flagtimes
+imgstats
+lbeamedits
+makeavgpb
+Makefile
+matchsources
+plottime
+refentry
+regridimg
+render
+sensitivity
+sourceresponse
+unittests
+volumes
+```
+
 ```
 editmodel -- Interpolation, extrapolation, plotting and scaling of the spectral energy distribution. Usage:
-editmodel 
-    [-p [-ft]] 
-    [-rmp] 
-    [-m <output model>] 
-    [-o] 
-    [-s <scale>] 
-    [-s-to <freq> <flux>] 
-    [-sp <peakflux A> <freq A> <peakflux B> <freq B>] 
-    [-sc <intflux A> <freq A> <intflux B> <freq B>] 
-    [-set0/1/2/3 <flux>] 
-    [-unpolarized] 
-    [-pl] 
-    [-t <threshold>] 
-    [-tbeam <beamprefix> <threshold-ratio>] 
-    [-tc <compthreshold>] 
-    [-tcl <cluster threshold] 
-    [-r <new-nr-channels>] 
-    [-ravg <new-nr-channels>] 
-    [-near/outside <ra> <dec> <dist>] 
-    [-combine-diff-meas] 
-    [-collect <name>] 
-    [-uncollect] 
-    [-rnd <n> <ra> <dec> <dist>] 
-    [-sort] 
-    [-sortbeam <beamprefix>] 
-    [-lognlogs <frequency> <bincount>] 
-    [-stats] 
-    [-setfrequency <val>] 
-    [-delnans] 
-    [-from-sagecal <sources-filename> <clusters-filename>] 
-    [-sagecal <prefix> <chunksize> [-old-sagecal]] 
-    [-dppp-model <filename>] 
-    [-skymodel <filename>] 
-    [-toapp <beamprefix>] 
-    [-save-clusters <clusters.ann>] 
-    [-list] 
-    [-evaluate <freq>] 
-    [-scale-to <model> <freq-start> <freq-end> <terms>] 
-    [-select <name>] 
-    [-search <count> <ra> <dec>] 
-    [-simuniform N RA Dec dist flux] 
-    [-simpopulation RA Dec dist lowflux highflux] 
-    [-min-separation <angle>] 
-    [-replace-si <n> <si> <terms...>] 
-    [-set-cluster <name>] 
-    [-rts <filename>] 
-    [-to-powerlaw <n>] 
-    [-shift <ra-angle> <dec-angle>] 
-    [-kvis <kvis .ann file>] 
+editmodel
+    [-p [-ft]]
+    [-rmp]
+    [-m <output model>]
+    [-o]
+    [-s <scale>]
+    [-s-to <freq> <flux>]
+    [-sp <peakflux A> <freq A> <peakflux B> <freq B>]
+    [-sc <intflux A> <freq A> <intflux B> <freq B>]
+    [-set0/1/2/3 <flux>]
+    [-unpolarized]
+    [-pl]
+    [-t <threshold>]
+    [-tbeam <beamprefix> <threshold-ratio>]
+    [-tc <compthreshold>]
+    [-tcl <cluster threshold]
+    [-r <new-nr-channels>]
+    [-ravg <new-nr-channels>]
+    [-near/outside <ra> <dec> <dist>]
+    [-combine-diff-meas]
+    [-collect <name>]
+    [-uncollect]
+    [-rnd <n> <ra> <dec> <dist>]
+    [-sort]
+    [-sortbeam <beamprefix>]
+    [-lognlogs <frequency> <bincount>]
+    [-stats]
+    [-setfrequency <val>]
+    [-delnans]
+    [-from-sagecal <sources-filename> <clusters-filename>]
+    [-sagecal <prefix> <chunksize> [-old-sagecal]]
+    [-dppp-model <filename>]
+    [-skymodel <filename>]
+    [-toapp <beamprefix>]
+    [-save-clusters <clusters.ann>]
+    [-list]
+    [-evaluate <freq>]
+    [-scale-to <model> <freq-start> <freq-end> <terms>]
+    [-select <name>]
+    [-search <count> <ra> <dec>]
+    [-simuniform N RA Dec dist flux]
+    [-simpopulation RA Dec dist lowflux highflux]
+    [-min-separation <angle>]
+    [-replace-si <n> <si> <terms...>]
+    [-set-cluster <name>]
+    [-rts <filename>]
+    [-to-powerlaw <n>]
+    [-shift <ra-angle> <dec-angle>]
+    [-kvis <kvis .ann file>]
     [-split/-split2 <ra1> <dec1> <ra2> <dec2>] <model> [<more models...>]
 
 ```
@@ -83,12 +124,12 @@ render -t images/1069761080-MFS-image-pb.fits -o models/two-directions.fits -r m
 singularity pull -F /data/curtin_mwaeor/singularity/lofartools.sif docker://satyapan/lofartools:0.1
 ```
 
-## DP3 
+## DP3
 
 ### DP3 gaincal
 LOFAR Imaging Cookbook §5.1
 ```
-gaincal.sourcedb= # converted 
+gaincal.sourcedb= # converted
 gaincal.parmdb=gc_solutions.h5 \
 gaincal.caltype=fulljones \
 gaincal.usebeammodel=true \
@@ -102,7 +143,7 @@ averager.freqresolution=160kHz
 #### `gaincal.caltype`
 ![[Screenshot 2025-08-03 at 2.21.52 PM.png]]
 #### `gaincal.solint`
-- `solint=2` = solutions for every 2 time intervals, 
+- `solint=2` = solutions for every 2 time intervals,
 
 
 #### DDEs
@@ -334,14 +375,14 @@ rm -rf gc_solutions.h5 dp3_${obsid}.ms
 #     0.0% (   32  s) Averager averager.
 #     0.0% ( 1039 ms) MSWriter msout.
 #       0.0% (    0 ms) Creating task
-#     504.4% ( 5241 ms) Writing (threaded)       
+#     504.4% ( 5241 ms) Writing (threaded)
 
 # User time (seconds): 330818.71
 # System time (seconds): 42426.37
 # Percent of CPU this job got: 203%
 # Elapsed (wall clock) time (h:mm:ss or m:ss): 50:54:51
 # Maximum resident set size (kbytes): 72443348
-	
+
 # apply it to this one
 cd /data/curtin_mwaeor/asvo/909789 ; export obsid=1385471344
 ```
@@ -472,10 +513,10 @@ rm -rf gc_solutions.h5 dp3_1099490168_ssins_30l_src8k_160kHz.ms
 	gaincal.tolerance=1e-20 \
 	gaincal.coefficients_path=/data/curtin_mwaeor/mwa_full_embedded_element_pattern.h5
 	averager.freqresolution=160kHz
-# this took forever! 
+# this took forever!
 
 #let's try one that's already calibrated and averaged
-# - 58.312m = 30λ @ 154.235 MHz 
+# - 58.312m = 30λ @ 154.235 MHz
 rm -rf gc_solutions.h5 dp3_1099490168_ssins_30l_src8k_160kHz.ms
 /usr/bin/time -v singularity exec -B/data -W$PWD docker://d3vnull0/dp3-mwa:latest DP3 \
 	msin=../prep/birli_1099490168_vv_edg80.ssins.ms \
@@ -493,20 +534,20 @@ rm -rf gc_solutions.h5 dp3_1099490168_ssins_30l_src8k_160kHz.ms
 ```
 
 ```txt
-Total DP3 time    3331.85 real     4373.91 user     11281.9 system                                                              
-    0.9% (   29  s) MsReader  
+Total DP3 time    3331.85 real     4373.91 user     11281.9 system
+    0.9% (   29  s) MsReader
     0.2% ( 5370 ms) Filter filter.
    98.9% ( 3293  s) GainCal gaincal.
-           58.5% ( 1927  s) of it spent in predict                                               
-            0.9% (   29  s) of it spent in reordering visibility data                            
-           39.1% ( 1287  s) of it spent in estimating gains and computing residuals              
-            0.0% (   11 ms) of it spent in writing gain solutions to disk                        
-        Converged: 2, stalled: 51, non converged: 0, failed: 0                                   
-        Iters converged: 0, stalled: 8, non converged: 0, failed: 0                              
-    0.7% (   23  s) Averager averager.                                                           
-    0.0% (  877 ms) MSWriter msout.                                                              
-      0.0% (    0 ms) Creating task                                                              
-    362.9% ( 3184 ms) Writing (threaded) 
+           58.5% ( 1927  s) of it spent in predict
+            0.9% (   29  s) of it spent in reordering visibility data
+           39.1% ( 1287  s) of it spent in estimating gains and computing residuals
+            0.0% (   11 ms) of it spent in writing gain solutions to disk
+        Converged: 2, stalled: 51, non converged: 0, failed: 0
+        Iters converged: 0, stalled: 8, non converged: 0, failed: 0
+    0.7% (   23  s) Averager averager.
+    0.0% (  877 ms) MSWriter msout.
+      0.0% (    0 ms) Creating task
+    362.9% ( 3184 ms) Writing (threaded)
 ```
 
 ### DP3 DDECal
@@ -566,7 +607,7 @@ conda activate losoto
 
 losoto --help
 ```
-```txt 
+```txt
 usage: losoto [-h] [--version] [--quiet] [--verbose] [--filter FILTER] [--info] [--delete DELETE] h5parm [parset]
 
 LoSoTo - Francesco de Gasperin (astro@voo.it)

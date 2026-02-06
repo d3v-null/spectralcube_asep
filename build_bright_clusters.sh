@@ -11,8 +11,9 @@ set -euo pipefail
 #   ./build_bright_clusters.sh 1099487728_reduced_n500.txt 5 bright5.ao.txt bright5.skymodel.txt
 
 in_model=${1:?need input AO model (.txt)}
-K=${2:?need clustercount}
-ao_out=${3:?need output clustered AO model}
+N=${2:?need clustercount}
+K=${3:?need number of clusters to select}
+ao_out=${4:?need output clustered AO model}
 dp3_out=${4:?need output dp3 skymodel}
 
 if [[ ! -s "$in_model" ]]; then

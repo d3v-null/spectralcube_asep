@@ -1,0 +1,56 @@
+# from https://github.com/revoltek/LiLF/blob/master/parsets/LOFAR_cal/losoto-plot-fullj.parset
+Ncpu = 0
+
+[plotA2]
+operation = PLOT
+soltab = sol000/amplitude000
+time.minmaxstep = [0,1e20,1000]
+axesInPlot = freq
+axisInTable = ant
+axisInCol = pol
+plotFlag = True
+prefix = plots/amp_
+#minmax = [0,300]
+
+[plotA3]
+operation = PLOT
+soltab = sol000/amplitude000
+axesInPlot = [time,freq]
+axisInTable = ant
+plotFlag = True
+prefix = plots/amp_
+#minmax = [0,300]
+
+[plotP2]
+operation = PLOT
+soltab = sol000/phase000
+time.minmaxstep = [0,1e20,1000]
+axesInPlot = freq
+axisInTable = ant
+axisInCol = pol
+plotFlag = True
+prefix = plots/ph_
+refAnt = auto
+minmax = [-3.14,3.14]
+
+[plotP3]
+operation = PLOT
+soltab = sol000/phase000
+axesInPlot = [time,freq]
+axisInTable = ant
+plotFlag = True
+prefix = plots/ph_
+refAnt = auto
+minmax = [-3.14,3.14]
+
+[plotPd]
+operation = PLOT
+soltab = sol000/phase000
+pol = XX,YY
+axesInPlot = [time,freq]
+axisInTable = ant
+axisDiff = pol
+plotFlag = True
+prefix = plots/ph-diff_
+refAnt = auto
+minmax = [-3.14,3.14]

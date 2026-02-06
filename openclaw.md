@@ -18,12 +18,12 @@ export dical_suffix="_t4-5"
 export num_sources=500
 
 # File naming conventions (guessed based on settings)
-ms=birli_${obsid}_${timeres_s}s_${freqres_khz}kHz.ms
-metafits=${obsid}.metafits
-MWA_BEAM_FILE=mwa_full_embedded_element_pattern.h5
-srclist=GGSM_updated.fits
-model_in=${obsid}_reduced_n${num_sources}.txt
-model_out=${model_in%.txt}.skymodel.txt
+export ms=birli_${obsid}_${timeres_s}s_${freqres_khz}kHz.ms
+export metafits=${obsid}.metafits
+export MWA_BEAM_FILE=mwa_full_embedded_element_pattern.h5
+export srclist=GGSM_updated.fits
+export model_in=${obsid}_reduced_n${num_sources}.txt
+export model_out=${model_in%.txt}.skymodel.txt
 ```
 
 ```bash
@@ -47,140 +47,53 @@ A sky model is available here:
 curl -L -o $srclist "https://github.com/GLEAM-X/GLEAM-X-pipeline/raw/master/models/${srclist##*/}"
 ```
 
-Zeroth step is to ensure that both calibration methods produce a similar model
-
-## Sky Model - hyperdrive vs DP3
-
-```bash
-# Inputs are defined at the top
-
-# 1) Build a compact AO sky model (top N by beam-weighted flux)
-#    (DP3 can't ingest the FITS srclist directly; we convert below.)
-docker run --rm --entrypoint /entrypoint.sh -v "$PWD:$PWD" -w "$PWD" mwatelescope/mwa-demo:main hyperdrive srclist-by-beam \
-  --source-dist-cutoff=180 --veto-threshold 0.005 \
-  --metafits ${metafits} \
-  --number ${num_sources} \
-  --beam-file ${MWA_BEAM_FILE} \
-  -o ao \
-  ${srclist_fits} \
-  ${obsid}_reduced_n${num_sources}.txt
-
-# 2) Convert AO source list -> DP3 sourcedb/skymodel text (via lofartools)
-docker run --rm -v "$PWD:$PWD" -w "$PWD" satyapan/lofartools:0.1 \
-  editmodel -skymodel ${model_out} ${model_in}
-
-```
-
-first: without beam
-
-```bash
-docker run --rm --entrypoint /entrypoint.sh -v "$PWD:$PWD" -w "$PWD" mwatelescope/mwa-demo:main hyperdrive vis-simulate \
-  --source-dist-cutoff=180 --veto-threshold 0.005 \
-  --freq-res 1280 --num-fine-channels 24 \
-  --time-res 8 --num-timesteps 1 \
-  --metafits ${metafits} \
-  --no-beam \
-  --source-list ${obsid}_reduced_n${num_sources}.txt \
-  --output-model-files hyp_model_${obsid}_src${num_sources}_no_beam.ms
-
-export OPENBLAS_NUM_THREADS=1
-docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mwa:latest DP3 \
-  msin=hyp_model_${obsid}_src${num_sources}_no_beam.ms \
-  msout=dp3_model_${obsid}_src${num_sources}_no_beam.ms \
-  steps=[predict] \
-  predict.sourcedb=${model_out} \
-  predict.usebeammodel=false \
-  msout.overwrite=true
-```
-
-they're the same.
-
-```txt
-# docker run --rm -v $PWD:$PWD --entrypoint $PWD/taql_compare.sh d3vnull0/dp3-mwa:latest $PWD/*_model_${obsid}_src${num_sources}_no_beam.ms
-==== Comparing column DATA ====
--- DATA stats
-using style glish select countall() as nrows, gsum(sum(abs(DATA))) as sum_abs, gmean(mean(abs(DATA))) as mean_abs from /home/ubuntu/spectralcube_asep/dp3_model_1099487728_src500_no_beam.ms
-    has been executed
-    select result of 1 rows
-3 selected columns:  nrows sum_abs mean_abs
-8128    8.81865e+07     113.018
-
--- DATA stats
-using style glish select countall() as nrows, gsum(sum(abs(DATA))) as sum_abs, gmean(mean(abs(DATA))) as mean_abs from /home/ubuntu/spectralcube_asep/hyp_model_1099487728_src500_no_beam.ms
-    has been executed
-    select result of 1 rows
-3 selected columns:  nrows sum_abs mean_abs
-8128    8.81855e+07     113.017
-```
-
-with beam
-
-```bash
-docker run --rm --entrypoint /entrypoint.sh -v "$PWD:$PWD" -w "$PWD" mwatelescope/mwa-demo:main hyperdrive vis-simulate \
-  --source-dist-cutoff=180 --veto-threshold 0.005 \
-  --freq-res 1280 --num-fine-channels 24 \
-  --time-res 8 --num-timesteps 1 \
-  --metafits ${metafits} \
-  --beam-file ${MWA_BEAM_FILE} \
-  --source-list ${obsid}_reduced_n${num_sources}.txt \
-  --output-model-files hyp_model_${obsid}_src${num_sources}.ms
-
-docker run --rm -v "$PWD:$PWD" -w $PWD mwatelescope/cotter fixmwams hyp_model_${obsid}_src${num_sources}.ms ${metafits}
-
-export OPENBLAS_NUM_THREADS=1
-docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mwa:latest DP3 \
-  msin=hyp_model_${obsid}_src${num_sources}.ms \
-  msout=dp3_model_${obsid}_src${num_sources}.ms \
-  steps=[predict] \
-  predict.sourcedb=${model_out} \
-  predict.usebeammodel=true \
-  predict.coefficients_path=${MWA_BEAM_FILE} \
-  msout.overwrite=true
-```
-
-these are now the same.
-
-```txt
-# docker run --rm -v $PWD:$PWD --entrypoint $PWD/taql_compare.sh d3vnull0/dp3-mwa:latest $PWD/{hyp,dp3}_model_1099487728_src500.ms
--- DATA stats
-using style glish select countall() as nrows, gsum(sum(abs(DATA))) as sum_abs, gmean(mean(abs(DATA))) as mean_abs from /home/ubuntu/spectralcube_asep/hyp_model_1099487728_src500.ms
-    has been executed
-    select result of 1 rows
-3 selected columns:  nrows sum_abs mean_abs
-8128    1.632e+07       20.9153
-
--- DATA stats
-using style glish select countall() as nrows, gsum(sum(abs(DATA))) as sum_abs, gmean(mean(abs(DATA))) as mean_abs from /home/ubuntu/spectralcube_asep/dp3_model_1099487728_src500.ms
-    has been executed
-    select result of 1 rows
-3 selected columns:  nrows sum_abs mean_abs
-8128    1.65897e+07     21.2609
-```
-
-also confirm with images
-
-```bash
-cd /home/ubuntu/spectralcube_asep
-for ms in {hyp,dp3}_model_${obsid}_src${num_sources}.ms; do
-  docker run --rm --user 0:0 -e OPENBLAS_NUM_THREADS=1 \
-  -v "$PWD:$PWD" -w "$PWD" \
-  images.canfar.net/srcnet/sp5505:sha-ceb56ad-cpu \
-  wsclean -name ebdiag/${ms%.ms} \
-  -j 16 \
-  -temp-dir /tmp \
-  -size 1024 1024 -scale 0.117188 \
-  -pol xx,yy -niter 0 -weight natural \
-  -data-column DATA \
-  -apply-primary-beam -pb-grid-size 1024 \
-  -mwa-path "$PWD" \
-  $ms
-done
-```
-
-
 First step is to DI Calibrate the data.
 
----
+## DI Cal - DP3
+
+```bash
+# DP3 DI cal (gaincal) using a DP3/LoFAR-format sky model.
+# This follows the working pattern in DP3_notes.md, adapted to this dataset.
+
+# MWA MS fix
+docker run --rm -v "$PWD:$PWD" -w $PWD mwatelescope/cotter fixmwams ${ms} ${metafits}
+# docker run --rm --entrypoint /entrypoint.sh -v "$PWD:$PWD" -w "$PWD" mwatelescope/mwa-demo:main hyperdrive vis-convert \
+#   --data ${metafits} ${ms} \
+#   --outputs hyp_${ms}.ms
+# docker run --rm -v "$PWD:$PWD" -w $PWD mwatelescope/cotter fixmwams hyp_${ms}.ms ${metafits}
+
+
+[ -f gc_solutions_${obsid}.h5 ] && sudo rm -rf gc_solutions_${obsid}.h5
+[ -d dp3_${obsid}_di.ms ] && sudo rm -rf dp3_${obsid}_di.ms
+# 3) Run DP3 gaincal (full-Jones) and write calibrated visibilities to a new MS
+# NOTE: solint and nchan are the number of time and frequency channels to average over
+# 27 * 4s = 108s = 1.8 minutes
+export OPENBLAS_NUM_THREADS=1
+docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mwa:latest DP3 \
+  msin=${ms} \
+  msout=dp3_${obsid}_di.ms \
+  steps=[gaincal] \
+  gaincal.sourcedb=${model_out} \
+  gaincal.parmdb=gc_solutions_${obsid}.h5 \
+  gaincal.caltype=fulljones \
+  gaincal.usebeammodel=true \
+  gaincal.uvlambdamin=75 \
+  gaincal.uvlambdamax=1667 \
+  gaincal.maxiter=300 \
+  gaincal.tolerance=1e-20 \
+  gaincal.applysolution=true \
+  gaincal.coefficients_path=${MWA_BEAM_FILE} \
+  gaincal.solint=27 \
+  gaincal.nchan=32 \
+  msout.overwrite=true
+
+# Optional QA: plot the gaincal solutions with LiLF/losoto
+docker run --rm -v "$PWD:$PWD" -w "$PWD" revoltek/pill:20251114 losoto -V gc_solutions_${obsid}.h5 losoto-fullj.parset
+
+./image_ms_and_cube.sh dp3_${obsid}_di.ms
+```
+
+![dp3_1099487728_gaincal.gif](dp3_1099487728_gaincal.gif)
 
 # DP3: Direction-dependent subtraction options (DDECal vs Demix)
 
@@ -241,15 +154,32 @@ This clusters the input AO sky model into `cluster1..clusterK`, then converts to
 From this repo (already includes the helper script):
 
 ```bash
-# Build 5 clusters from the existing 500-source AO model
-# Input:  1099487728_reduced_n500.txt
-# Output: bright5.ao.txt + bright5.skymodel.txt
+# Select N from the K clusters from the existing 500-source AO model
+export model_in=${obsid}_reduced_n${num_sources}.txt
+export model_out=${model_in%.txt}.skymodel.txt
+export N=5
+export K=200
 
-./build_bright_clusters.sh 1099487728_reduced_n500.txt 5 bright5.ao.txt bright5.skymodel.txt
+export ao_out=${obsid}_c${K}_${N}.ao.txt
+export dp3_peel=${ao_out%.ao.txt}.skymodel.txt
 
-# Directions will be: cluster1,cluster2,cluster3,cluster4,cluster5
-bright5_ao=bright5.ao.txt
-bright5_dp3=bright5.skymodel.txt
+# Cluster into K clusters (cluster1..clusterK), limit to N clusters
+docker run --rm -v "$PWD:$PWD" -w "$PWD" satyapan/lofartools:0.1 \
+  cluster "$model_out" "$ao_out" ${K}
+
+# Convert clustered AO -> DP3 skymodel
+docker run --rm -v "$PWD:$PWD" -w "$PWD" satyapan/lofartools:0.1 \
+  editmodel -skymodel "$dp3_peel" "$ao_out"
+
+# every cluster is delimited by a line starting with `,`
+# and we need to select the first ${N} clusters
+awk '/^, cluster/{if(c++>='${N}') exit} 1' "$dp3_peel" > "${dp3_peel%.skymodel.txt}_first${N}.skymodel.txt" && mv "${dp3_peel%.skymodel.txt}_first${N}.skymodel.txt" "$dp3_peel"
+
+realpath $dp3_peel
+
+echo "Wrote clustered AO:  $ao_out"
+echo "Wrote DP3 skymodel: $dp3_peel"
+echo "Directions will be named: cluster1..cluster${K}"
 ```
 
 This removes the need to hand-name patches like `POINTING`.
@@ -264,28 +194,46 @@ Example parset-style invocation (command-line keys):
 
 ```bash
 export OPENBLAS_NUM_THREADS=1
-
 # Solve DDE gains in 5 directions and subtract their model
 # (adjust directions list to match your skymodel patch names)
 
+[ -d dp3_${obsid}_ddecal_sub.ms ] && sudo rm -rf dp3_${obsid}_ddecal_sub.ms
+[ -f ddecal_solutions_${obsid}.h5 ] && sudo rm -rf ddecal_solutions_${obsid}.h5
 docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mwa:latest DP3 \
-  msin=${ms} \
+  msin=dp3_${obsid}_di.ms \
   msout=dp3_${obsid}_ddecal_sub.ms \
   steps=[ddecal] \
-  ddecal.sourcedb=${bright5_dp3} \
-  ddecal.directions=[cluster1,cluster2,cluster3,cluster4,cluster5] \
+  ddecal.sourcedb=${dp3_peel} \
+  ddecal.directions=[cluster1,cluster2] \
   ddecal.mode=diagonal \
   ddecal.solint=15 \
   ddecal.nchan=8 \
   ddecal.usebeammodel=true \
   ddecal.coefficients_path=${MWA_BEAM_FILE} \
-  ddecal.uvlambdamin=30 \
+  ddecal.uvlambdamin=75 \
+  ddecal.uvlambdamax=1667 \
   ddecal.smoothnessconstraint=2e6 \
-  ddecal.beamproximitylimit=60 \
+  ddecal.beamproximitylimit=10 \
   ddecal.h5parm=ddecal_solutions_${obsid}.h5 \
   ddecal.subtract=true \
   msout.overwrite=true
+
+#Total DP3 time    1068.61 real     8509.76 user       93.91 system
+#    0.8% ( 8212 ms) MsReader
+#   98.4% ( 1051  s) DDECal ddecal.
+#            5.3% (   55  s) of it spent in predict
+#           88.6% (  932  s) of it spent in estimating gains and computing residuals
+#            0.0% (   10 ms) of it spent in writing gain solutions to disk
+#          Substeps taken:
+#Iterations taken: [51,51]
+#    0.8% ( 8258 ms) MSWriter msout.
+#     82.2% ( 6790 ms) Creating task
+#    112.0% ( 9251 ms) Writing (threaded)
+
+./image_ms_and_cube.sh dp3_${obsid}_ddecal_sub.ms
 ```
+
+![dp3_1099487728_ddecal_sub3.gif](dp3_1099487728_ddecal_sub3.gif)
 
 Notes:
 - `ddecal.mode=diagonal` is usually enough for Stokes I peeling; use `fulljones` only if you have evidence you need it.
@@ -299,6 +247,11 @@ Notes:
   ```
 - Image before/after to assess residuals around the peeled sources (WSClean dirty imaging is fine; ensure consistent parameters).
 - Compare vis stats before/after subtract (e.g. TAQL mean(|DATA|), flagged fraction).
+
+```bash
+docker run --rm -v $PWD:$PWD --entrypoint $PWD/image_ms_and_cube.sh ghcr.io/d3v-null/sp5505:sha-ceb56ad-pass $PWD/dp3_${obsid}_ddecal_sub.ms
+```
+
 
 ---
 
@@ -330,7 +283,8 @@ docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mw
   demix.coefficients_path=${MWA_BEAM_FILE} \
   demix.solint=15 \
   demix.nchan=8 \
-  demix.uvlambdamin=30 \
+  demix.uvlambdamin=75 \
+  demix.uvlambdamax=1667 \
   demix.h5parm=demix_patch1_${obsid}.h5 \
   msout.overwrite=true
 ```
@@ -373,63 +327,6 @@ Consider Demix only if:
 
 (See `dp3_demix.md` for the parameter rationale and pitfalls.)
 
-## DI Cal - DP3
-
-```bash
-# DP3 DI cal (gaincal) using a DP3/LoFAR-format sky model.
-# This follows the working pattern in DP3_notes.md, adapted to this dataset.
-
-# MWA MS fix
-docker run --rm -v "$PWD:$PWD" -w $PWD mwatelescope/cotter fixmwams ${ms} ${metafits}
-# docker run --rm --entrypoint /entrypoint.sh -v "$PWD:$PWD" -w "$PWD" mwatelescope/mwa-demo:main hyperdrive vis-convert \
-#   --data ${metafits} ${ms} \
-#   --outputs hyp_${ms}.ms
-# docker run --rm -v "$PWD:$PWD" -w $PWD mwatelescope/cotter fixmwams hyp_${ms}.ms ${metafits}
-
-
-[ -f gc_solutions_${obsid}.h5 ] && rm -rf gc_solutions_${obsid}.h5
-[ -d dp3_${obsid}_di.ms ] && rm -rf dp3_${obsid}_di.ms
-# 3) Run DP3 gaincal (full-Jones) and write calibrated visibilities to a new MS
-# NOTE: solint and nchan are the number of time and frequency channels to average over
-# 27 * 4s = 108s = 1.8 minutes
-export OPENBLAS_NUM_THREADS=1
-docker run --rm -e OPENBLAS_NUM_THREADS -v "$PWD:$PWD" -w "$PWD" d3vnull0/dp3-mwa:latest DP3 \
-  msin=${ms} \
-  msout=dp3_${obsid}_di.ms \
-  steps=[gaincal] \
-  gaincal.sourcedb=${model_out} \
-  gaincal.parmdb=gc_solutions_${obsid}.h5 \
-  gaincal.caltype=fulljones \
-  gaincal.usebeammodel=true \
-  gaincal.uvlambdamin=30 \
-  gaincal.maxiter=300 \
-  gaincal.tolerance=1e-20 \
-  gaincal.applysolution=true \
-  gaincal.coefficients_path=${MWA_BEAM_FILE} \
-  gaincal.solint=27 \
-  gaincal.nchan=32 \
-  msout.overwrite=true
-
-# Percentage of flagged visibilities detected per correlation:
-#   [0,0,0,0] out of 168542208 visibilities   [0%, 0%, 0%, 0%]
-# 0 missing time slots were inserted
-
-# Total DP3 time    4007.12 real     10341.8 user      531.33 system
-#     0.2% ( 6804 ms) MsReader
-#    99.3% ( 3981  s) GainCal gaincal.
-#            92.0% ( 3662  s) of it spent in predict
-#             0.2% ( 9010 ms) of it spent in reordering visibility data
-#             7.6% (  300  s) of it spent in estimating gains and computing residuals
-#             0.0% (    3 ms) of it spent in writing gain solutions to disk
-#         Converged: 0, stalled: 24, non converged: 0, failed: 0
-#         Iters converged: 0, stalled: 63, non converged: 0, failed: 0
-#     0.0% ( 1832 ms) MSWriter msout.
-#       0.0% (    0 ms) Creating task
-#     421.3% ( 7717 ms) Writing (threaded)
-
-# Optional QA: plot the gaincal solutions with LiLF/losoto
-docker run --rm -v "$PWD:$PWD" -w "$PWD" revoltek/pill:20251114 losoto -V gc_solutions_${obsid}.h5 losoto-fullj.parset
-```
 
 ## DI Cal - hyperdrive
 
@@ -474,39 +371,7 @@ docker run --rm --entrypoint /entrypoint.sh -v "$PWD:$PWD" -w "$PWD" mwatelescop
 Imaging
 
 ```bash
-docker run --rm -v $PWD:$PWD --entrypoint $PWD/image_ms_and_cube.sh d3vnull0/dp3-mwa:latest $PWD/birli_1099487728_4s_40kHz.ms
-```
-
-```bash
-# cd /home/ubuntu/spectralcube_asep
-# docker run --rm --user 0:0 -e OPENBLAS_NUM_THREADS=1 \
-# -v "$PWD:$PWD" -w "$PWD" \
-# images.canfar.net/srcnet/sp5505:sha-ceb56ad-cpu \
-# wsclean -name ebdiag_birli \
-# -j 4 \
-# -temp-dir /tmp \
-# -size 1024 1024 -scale 0.117188 \
-# -channels-out 24 -join-channels \
-# -pol xx,yy -niter 0 -weight natural \
-# -data-column DATA \
-# -apply-primary-beam -pb-grid-size 32 \
-# -mwa-path "$PWD" \
-# birli_1099487728_4s_40kHz.ms
-
-
-cd /home/ubuntu/spectralcube_asep
-docker run --rm --user 0:0 -e OPENBLAS_NUM_THREADS=1 \
--v "$PWD:$PWD" -w "$PWD" \
-images.canfar.net/srcnet/sp5505:sha-ceb56ad-cpu \
-wsclean -name ebdiag_birli \
--j 16 \
--temp-dir /tmp \
--size 1024 1024 -scale 0.117188 \
--pol xx,yy -niter 0 -weight natural \
--data-column DATA \
--apply-primary-beam -pb-grid-size 1024 \
--mwa-path "$PWD" \
-hyp_${ms}.ms
+docker run --rm -v $PWD:$PWD --entrypoint $PWD/image_ms_and_cube.sh ghcr.io/d3v-null/sp5505:sha-ceb56ad-pass $PWD/birli_1099487728_4s_40kHz.ms
 ```
 
 carta
@@ -519,3 +384,5 @@ docker run --rm -it \
   cartavis/carta:latest \
   --port 3005
 ```
+
+---
